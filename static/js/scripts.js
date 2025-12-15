@@ -60,4 +60,11 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
-}); 
+    // 加载 experience.md 并渲染到页面
+    fetch('static/md/experience.md')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('experience-md').innerHTML = marked.parse(text);
+        });
+
+});
