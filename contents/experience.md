@@ -4,9 +4,22 @@
 
 负责1sTick股票高频因子的挖掘与检验，专注于因子的金融学逻辑和回测表现。参与ETF底仓调优项目，优化产品票池结构，在风险承受范围内最大限度提升产品收益。
 
-<img src="../static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:100%;">
+<div style="text-align:center;">
+  <img src="../static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:30%; display:inline-block;">
+  <img src="../static/assets/img/FZYB003001ic_avg.png" alt="IC表现" style="width:30%; display:inline-block;">
+  <img src="../static/assets/img/FZYB003001_pnl_plot_45_3.png" alt="产品表现" style="width:30%; display:inline-block;">
+</div
 
-<img src="../static/assets/img/FZYB003001ic_avg.png" alt="IC表现" style="width:100%;">
+
+
+<div style="text-align:center;">
+  <img src="..\static\assets\img\FZYB003001_S.CN.SZSE.000504.png" alt="涨停表现" style="width:30%; display:inline-block;">
+  <img src="..\static\assets\img\FZYB003001_S.CN.SZSE.000906.png" alt="震荡表现" style="width:30%; display:inline-block;">
+  <img src="..\static\assets\img\FZYB003001_S.CN.SZSE.301589.png" alt="跌停表现" style="width:30%; display:inline-block;">
+</div
+
+
+
 
 
 #### 具体贡献:
@@ -14,6 +27,11 @@
 - 独立设计并迭代开发基于**订单簿微观结构的Alpha因子**，通过刻画买卖双方在主动成交与高档位挂单中的不对称压力，构建具有前瞻性的多空信号；
 - 因子在**创业板样本**内回测 (2024.07–2025.07) 实现**年化收益率 2.33\%**、**夏普比率 2.41**，且与现有因子库相关性低于 0.7，具备显著增量信息。
 - 基于手工T0交易员提供的加/减仓票池 (Pool1/Pool2)，设计并实现“**市值权重降序减仓**”调仓逻辑，在控制跟踪误差 (TE ≈ 0.0028) 前提下，将产品**年化收益率由 3.08\% 提升至 4.63\%**(加仓4倍)；进一步测算极限调仓场景，验证在风险可控范围内可实现 6.18\% 年化收益，为产品达标6\%收益目标提供量化支撑。
+
+<div style="text-align:center;">
+  <img src="../static/assets/img/ETFbaseadjust.png" alt="产品表现" style="width:30%;">
+</div>
+
 
 ---
 
