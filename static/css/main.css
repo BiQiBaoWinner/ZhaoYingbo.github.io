@@ -3,6 +3,7 @@
 
 :root{
     --h-title-color:#3948d2;
+    font-family: "Times New Roman", Times, "宋体", SimSun, serif !important;
 }
 
 .header {
@@ -109,4 +110,6 @@ section .main-body{
     }
 }
 
-
+html {
+    scroll-behavior: auto !important;
+}

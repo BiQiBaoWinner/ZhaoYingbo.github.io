@@ -1,18 +1,8 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'awards', 'experience', 'publications'];
 
 
 window.addEventListener('DOMContentLoaded', event => {
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 74,
-        });
-    };
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -47,12 +37,19 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Marked
     marked.use({ mangle: false, headerIds: false })
-    section_names.forEach((name, idx) => {
+    const section_names = Array.from(
+        document.querySelectorAll('.main-body[id$="-md"]')
+    ).map(el => el.id.replace('-md', ''));
+
+    section_names.forEach((name) => {
         fetch(content_dir + name + '.md')
             .then(response => response.text())
             .then(markdown => {
                 const html = marked.parse(markdown);
-                document.getElementById(name + '-md').innerHTML = html;
+                const target = document.getElementById(name + '-md');
+                if (target) {
+                    target.innerHTML = html;
+                }
             }).then(() => {
                 // MathJax
                 MathJax.typeset();

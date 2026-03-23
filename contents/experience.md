@@ -1,8 +1,7 @@
-### **量化策略实习生**
-
-**2026.1 - 2026.3 | 金斧子基金销售有限公司 | 星荣事业群**
-
-独立完成A股高频微观结构日频因子研究，围绕盘口供给、价格推动、流动性摩擦、开盘定价效率与交易集中度构建 50+ 因子框架，形成'Minute_logvol_skew'、'Minute_MPC5_max_v2'、'tick_LS_99'、'tick_VD15m'等多条稳定alph主线，着重关注因子的金融学逻辑以及对隔日的截面Alpha捕捉能力。完善因子检验框架，补充“因子风格分解模块”+“FamaMacBeth增量Alpha检验模块”。
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
+金斧子基金销售有限公司  |  星荣事业群  -  量化策略实习生  |  2026.1 - 2026.3
+</div>
+独立完成A股高频微观结构日频因子研究，围绕盘口供给、价格推动、流动性摩擦、开盘定价效率与交易集中度构建 50+ 因子框架，形成Minute_logvol_skew、Minute_MPC5_max_v2、tick_LS_99、tick_VD15m等多条稳定alph主线，着重关注因子的金融学逻辑以及对隔日的截面Alpha捕捉能力。完善因子检验框架，补充“因子风格分解模块”+“FamaMacBeth增量Alpha检验模块”。
 
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/jfz/Minute_logvol_skew_groups_5_20260228_175346.png" alt="Minute_logvol_skew" style="width:40%; display:inline-block;">
@@ -19,18 +18,18 @@
 
 - 围绕A股L1行情数据，搭建了覆盖订单簿、成交行为、价格发现、流动性摩擦与隔夜反馈的高频因子研究框架。
 - 研究重系统实现并迭代了 50+ 个候选因子，通过统一的回测、相似因子分析和中性化筛选出多条稳健主线：
-  - 'Minute_logvol_skew'用成交量分布不对称捕捉拥挤交易后的价格修正
-  - 'Minute_MPC5_max_v2'刻画收盘附近被成交量确认的价格推动
-  - 'tick_LS_99'刻画极端流动性摩擦
-  - 'tick_VD15m'刻画开盘定价效率偏离，均表现出较强的多空净值单调性与可交易性
+  - Minute_logvol_skew用成交量分布不对称捕捉拥挤交易后的价格修正
+  - Minute_MPC5_max_v2刻画收盘附近被成交量确认的价格推动
+  - tick_LS_99刻画极端流动性摩擦
+  - tick_VD15m刻画开盘定价效率偏离，均表现出较强的多空净值单调性与可交易性
 
 ---
 
-### **量化策略实习生**
-
-**2025.7 – 2025.9 | 燧石资产管理有限公司 | 投研组**
-
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
+燧石资产管理有限公司  |  投研组  -  量化策略实习生  |  2025.7 – 2025.9 
+</div>
 负责1sTick股票高频因子的挖掘与检验，专注于因子的金融学逻辑和回测表现。参与ETF底仓调优项目，优化产品票池结构，在风险承受范围内最大限度提升产品收益。
+
 
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:30%; display:inline-block;">
@@ -91,10 +90,9 @@
 
 ---
 
-### **实习分析师**
-
-**2023年11月 – 2024年3月 | 东吴证券股份有限公司 | 研究所食饮组**
-
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
+东吴证券股份有限公司 | 研究所食饮组  -  实习分析师  |  2023.11 – 2024.3
+</div>
 负责食品饮料行业（调味品&乳制品）数据的收集与整理，以及深度研究报告的撰写。
 
 #### 工作内容:
