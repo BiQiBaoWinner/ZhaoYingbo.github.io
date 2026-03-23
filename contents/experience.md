@@ -29,75 +29,44 @@
 - 基于手工T0交易员提供的加/减仓票池 (Pool1/Pool2)，设计并实现“**市值权重降序减仓**”调仓逻辑，在控制跟踪误差 (TE ≈ 0.0028) 前提下，将产品**年化收益率由 3.08\% 提升至 4.63\%**(加仓4倍)；进一步测算极限调仓场景，验证在风险可控范围内可实现 6.18\% 年化收益，为产品达标6\%收益目标提供量化支撑。
 
 <!-- ===== 策略回测表格开始 ===== -->
-<div style="width:100%; overflow-x:auto; margin: 25px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <style>
-    .qt-table-wrap { overflow-x: auto; }
-    .qt-table {
-      border-collapse: collapse;
-      font-size: 0.82em;
-      min-width: 850px;
-      width: 100%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      border-radius: 6px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .qt-table thead tr {
-      background: linear-gradient(135deg, #009879, #00b894);
-      color: #fff;
-      text-align: center;
-    }
-    .qt-table th,
-    .qt-table td {
-      padding: 9px 12px;
-      border: 1px solid #e0e0e0;
-      line-height: 1.4;
-    }
-    .qt-table tbody tr:nth-of-type(even) { background-color: #f8f9fa; }
-    .qt-table tbody tr:hover { background-color: #e8f5f2; transition: 0.2s; }
-    .qt-num { text-align: right; font-variant-numeric: tabular-nums; }
-    .qt-center { text-align: center; }
-    .qt-header-main { font-weight: 600; }
-  </style>
-  
-  <div class="qt-table-wrap">
-    <table class="qt-table">
-      <thead>
-        <tr>
-          <th rowspan="2" class="qt-center">Thres_n</th>
-          <th rowspan="2" class="qt-center">指标</th>
-          <th colspan="2" class="qt-header-main">T0</th>
-          <th colspan="2" class="qt-header-main">底仓</th>
-          <th colspan="2" class="qt-header-main">产品</th>
-        </tr>
-        <tr>
-          <th>调整前</th><th>调整后</th>
-          <th>调整前</th><th>调整后</th>
-          <th>调整前</th><th>调整后</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="qt-center">2</td><td class="qt-center">年化收益率</td><td class="qt-num">3.08%</td><td class="qt-num">3.24%</td><td class="qt-num">-5.34%</td><td class="qt-num">-2.36%</td><td class="qt-num">-2.27%</td><td class="qt-num">0.88%</td></tr>
-        <tr><td class="qt-center">2</td><td class="qt-center">年化波动率</td><td class="qt-num">0.22%</td><td class="qt-num">0.23%</td><td class="qt-num">1.62%</td><td class="qt-num">1.30%</td><td class="qt-num">1.66%</td><td class="qt-num">1.34%</td></tr>
-        <tr><td class="qt-center">2</td><td class="qt-center">夏普比率</td><td class="qt-num">14.12</td><td class="qt-num">13.85</td><td class="qt-num">-3.31</td><td class="qt-num">-1.82</td><td class="qt-num">-1.37</td><td class="qt-num">0.66</td></tr>
-        <tr><td class="qt-center">2</td><td class="qt-center">最大回撤</td><td class="qt-num">-0.01%</td><td class="qt-num">-0.01%</td><td class="qt-num">-1.10%</td><td class="qt-num">-0.65%</td><td class="qt-num">-0.85%</td><td class="qt-num">-0.54%</td></tr>
-        <tr><td class="qt-center">5</td><td class="qt-center">年化收益率</td><td class="qt-num">3.08%</td><td class="qt-num">4.29%</td><td class="qt-num">-5.34%</td><td class="qt-num">-2.67%</td><td class="qt-num">-2.27%</td><td class="qt-num">1.62%</td></tr>
-        <tr><td class="qt-center">5</td><td class="qt-center">年化波动率</td><td class="qt-num">0.22%</td><td class="qt-num">0.35%</td><td class="qt-num">1.62%</td><td class="qt-num">3.03%</td><td class="qt-num">1.66%</td><td class="qt-num">2.97%</td></tr>
-        <tr><td class="qt-center">5</td><td class="qt-center">夏普比率</td><td class="qt-num">14.12</td><td class="qt-num">12.38</td><td class="qt-num">-3.31</td><td class="qt-num">-0.88</td><td class="qt-num">-1.37</td><td class="qt-num">0.55</td></tr>
-        <tr><td class="qt-center">5</td><td class="qt-center">最大回撤</td><td class="qt-num">-0.01%</td><td class="qt-num">-0.01%</td><td class="qt-num">-1.10%</td><td class="qt-num">-1.07%</td><td class="qt-num">-0.85%</td><td class="qt-num">-0.74%</td></tr>
-        <tr><td class="qt-center">11</td><td class="qt-center">年化收益率</td><td class="qt-num">3.08%</td><td class="qt-num">5.52%</td><td class="qt-num">-5.34%</td><td class="qt-num">-3.17%</td><td class="qt-num">-2.27%</td><td class="qt-num">2.35%</td></tr>
-        <tr><td class="qt-center">11</td><td class="qt-center">年化波动率</td><td class="qt-num">0.22%</td><td class="qt-num">0.40%</td><td class="qt-num">1.62%</td><td class="qt-num">8.19%</td><td class="qt-num">1.66%</td><td class="qt-num">8.10%</td></tr>
-        <tr><td class="qt-center">11</td><td class="qt-center">夏普比率</td><td class="qt-num">14.12</td><td class="qt-num">13.91</td><td class="qt-num">-3.31</td><td class="qt-num">-0.39</td><td class="qt-num">-1.37</td><td class="qt-num">0.29</td></tr>
-        <tr><td class="qt-center">11</td><td class="qt-center">最大回撤</td><td class="qt-num">-0.01%</td><td class="qt-num">-0.01%</td><td class="qt-num">-1.10%</td><td class="qt-num">-2.27%</td><td class="qt-num">-0.85%</td><td class="qt-num">-2.15%</td></tr>
-        <tr><td class="qt-center">19.5</td><td class="qt-center">年化收益率</td><td class="qt-num">3.08%</td><td class="qt-num">6.18%</td><td class="qt-num">-5.34%</td><td class="qt-num">-4.34%</td><td class="qt-num">-2.27%</td><td class="qt-num">1.84%</td></tr>
-        <tr><td class="qt-center">19.5</td><td class="qt-center">年化波动率</td><td class="qt-num">0.22%</td><td class="qt-num">0.41%</td><td class="qt-num">1.62%</td><td class="qt-num">8.69%</td><td class="qt-num">1.66%</td><td class="qt-num">8.58%</td></tr>
-        <tr><td class="qt-center">19.5</td><td class="qt-center">夏普比率</td><td class="qt-num">14.12</td><td class="qt-num">15.03</td><td class="qt-num">-3.31</td><td class="qt-num">-0.50</td><td class="qt-num">-1.37</td><td class="qt-num">0.21</td></tr>
-        <tr><td class="qt-center">19.5</td><td class="qt-center">最大回撤</td><td class="qt-num">-0.02%</td><td class="qt-num">-0.02%</td><td class="qt-num">-1.10%</td><td class="qt-num">-2.27%</td><td class="qt-num">-0.85%</td><td class="qt-num">-2.15%</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div style="width:100%;overflow-x:auto;margin:25px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+<table style="border-collapse:collapse;font-size:0.8em;min-width:900px;width:100%;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:6px;overflow:hidden;background:#fff">
+<thead>
+<tr style="background:linear-gradient(135deg,#009879,#00b894);color:#fff;text-align:center">
+<th rowspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;width:90px">Thres_n</th>
+<th rowspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0">指标</th>
+<th colspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;font-weight:600">T0</th>
+<th colspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;font-weight:600">底仓</th>
+<th colspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;font-weight:600">产品</th>
+</tr>
+<tr style="background:linear-gradient(135deg,#009879,#00b894);color:#fff">
+<th style="padding:8px 12px;border:1px solid #e0e0e0">调整前</th><th style="padding:8px 12px;border:1px solid #e0e0e0">调整后</th>
+<th style="padding:8px 12px;border:1px solid #e0e0e0">调整前</th><th style="padding:8px 12px;border:1px solid #e0e0e0">调整后</th>
+<th style="padding:8px 12px;border:1px solid #e0e0e0">调整前</th><th style="padding:8px 12px;border:1px solid #e0e0e0">调整后</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:#fff"><td rowspan="4" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;vertical-align:middle;background:#f8f9fa;font-weight:600;color:#555">thres_n = 2</td><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化收益率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">3.0764%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">3.2423%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-5.3426%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.3595%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.2663%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.8828%</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化波动率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2180%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2341%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6161%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.2964%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6550%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.3403%</td></tr>
+<tr style="background:#fff"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">夏普比率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">14.1150</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">13.8520</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-3.3059</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.8200</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.3693</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.6587</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">最大回撤</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0094%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0095%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.1029%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.6462%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.8466%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.5369%</td></tr>
+<tr style="background:#fff"><td rowspan="4" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;vertical-align:middle;background:#f8f9fa;font-weight:600;color:#555">thres_n = 5</td><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化收益率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">3.0764%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">4.2925%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-5.3426%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.6733%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.2663%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6191%</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化波动率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2180%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.3468%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6161%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">3.0288%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6550%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">2.9666%</td></tr>
+<tr style="background:#fff"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">夏普比率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">14.1150</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">12.3771</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-3.3059</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.8826</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.3693</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.5458</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">最大回撤</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0094%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0104%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.1029%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.0660%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.8466%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.7447%</td></tr>
+<tr style="background:#fff"><td rowspan="4" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;vertical-align:middle;background:#f8f9fa;font-weight:600;color:#555">thres_n = 11</td><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化收益率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">3.0764%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums;color:#d63031">5.5171%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-5.3426%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-3.1691%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.2663%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">2.3480%</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化波动率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2180%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.3966%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6161%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums;color:#d63031">8.1870%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6550%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums;color:#d63031">8.0950%</td></tr>
+<tr style="background:#fff"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">夏普比率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">14.1150</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">13.9114</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-3.3059</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.3871</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.3693</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2901</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">最大回撤</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0094%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0122%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.1029%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.2716%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.8466%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.1504%</td></tr>
+<tr style="background:#fff"><td rowspan="4" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;vertical-align:middle;background:#f8f9fa;font-weight:600;color:#555">thres_n = 19.5</td><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化收益率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">3.0764%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums;color:#d63031">6.1828%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-5.3426%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-4.3423%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.2663%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.8405%</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">年化波动率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2180%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.4114%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6161%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums;color:#d63031">8.6873%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">1.6550%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums;color:#d63031">8.5832%</td></tr>
+<tr style="background:#fff"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">夏普比率</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">14.1150</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">15.0276</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-3.3059</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.4998</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.3693</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">0.2144</td></tr>
+<tr style="background:#f8f9fa"><td style="text-align:center;padding:8px 12px;border:1px solid #e0e0e0;color:#666">最大回撤</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0094%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.0161%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-1.1029%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.2716%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-0.8466%</td><td style="text-align:right;padding:8px 12px;border:1px solid #e0e0e0;font-variant-numeric:tabular-nums">-2.1504%</td></tr>
+</tbody>
+</table>
 </div>
 <!-- ===== 策略回测表格结束 ===== -->
+
 ---
 
 ### **实习分析师**
