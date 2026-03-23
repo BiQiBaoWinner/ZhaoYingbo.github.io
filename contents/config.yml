@@ -3,3 +3,7 @@ page-top-title: 个人主页
 top-section-bg-text: Be what you wanna be
 home-subtitle: 个人简介&ensp;|&ensp;赵英博
 copyright-text: '&copy; Yourname 2023-2025. All Rights Reserved.'
+
+params:
+  customCSS:
+    - "css/custom.css"
