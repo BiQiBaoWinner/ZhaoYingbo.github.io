@@ -6,7 +6,7 @@
 
 ---
 
-<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.05rem;border-radius:0 8px 8px 0;">
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
   Emails
 </div>
 
@@ -14,14 +14,14 @@ zhaoyb0715@163.com | 15620241152783@stu.xmu.edu.cn
 
 ---
 
-<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.05rem;border-radius:0 8px 8px 0;">
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
   教育背景
 </div>
 
 * **西南财经大学	(2020 – 2024)** <br>
   本科，财政税务学院，投资学 <br>
   **GPA**: 3.9 / 5.0   |   **Rank**: 5 / 78 <br>
-  **主修课程**：投资学、统计学、金融风险管理、计量经济学、商务大数据分析、公司金融、财务分析
+  **主修课程**：投资学、统计学、运筹学、金融风险管理、计量经济学、商务大数据分析、公司金融、财务分析
 
 * **厦门大学		(2024 – 至今)** <br>
   硕士，经济学院，金融 <br>
@@ -30,7 +30,7 @@ zhaoyb0715@163.com | 15620241152783@stu.xmu.edu.cn
 
 ---
 
-<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.05rem;border-radius:0 8px 8px 0;">
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
   研究方向
 </div>
 
