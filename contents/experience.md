@@ -24,7 +24,7 @@
   <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001_S.CN.SZSE.301589.png" alt="跌停表现" style="width:30%; display:inline-block;">
 </div>
 
-#### 具体贡献:
+#### 工作内容:
 
 - 独立设计并迭代开发基于**订单簿微观结构的Alpha因子**，通过刻画买卖双方在主动成交与高档位挂单中的不对称压力，构建具有前瞻性的多空信号；
 - 因子在**创业板样本**内回测 (2024.07–2025.07) 实现**年化收益率 2.33\%**、**夏普比率 2.41**，且与现有因子库相关性低于 0.7，具备显著增量信息。
@@ -34,14 +34,14 @@
 <div style="width:100%;overflow-x:auto;margin:25px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 <table style="border-collapse:collapse;font-size:0.8em;min-width:900px;width:100%;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:6px;overflow:hidden;background:#fff">
 <thead>
-<tr style="background:linear-gradient(135deg,#009879,#00b894);color:#fff;text-align:center">
+<tr style="background:linear-gradient(135deg,#1976d2,#42a5f5);color:#fff;text-align:center">
 <th rowspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;width:90px">Thres_n</th>
 <th rowspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0">指标</th>
 <th colspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;font-weight:600">T0</th>
 <th colspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;font-weight:600">底仓</th>
 <th colspan="2" style="text-align:center;padding:10px 12px;border:1px solid #e0e0e0;font-weight:600">产品</th>
 </tr>
-<tr style="background:linear-gradient(135deg,#009879,#00b894);color:#fff">
+<tr style="background:linear-gradient(135deg,#1976d2,#42a5f5);color:#fff">
 <th style="padding:8px 12px;border:1px solid #e0e0e0">调整前</th><th style="padding:8px 12px;border:1px solid #e0e0e0">调整后</th>
 <th style="padding:8px 12px;border:1px solid #e0e0e0">调整前</th><th style="padding:8px 12px;border:1px solid #e0e0e0">调整后</th>
 <th style="padding:8px 12px;border:1px solid #e0e0e0">调整前</th><th style="padding:8px 12px;border:1px solid #e0e0e0">调整后</th>
@@ -69,13 +69,15 @@
 </div>
 <!-- ===== 策略回测表格结束 ===== -->
 
+---
+
 ### **实习分析师**
 
 **2023年11月 – 2024年3月 | 东吴证券股份有限公司 | 研究所食饮组**
 
 负责食品饮料行业（调味品&乳制品）数据的收集与整理，以及深度研究报告的撰写。
 
-#### 具体贡献:
+#### 工作内容:
 
 - 深度参与两家上市公司研究报告和调味品策略报告的撰写，具体工作内容包括数据整理与图表绘制、数据分析与报告撰写、合规底稿的制作与整理。按时按规完成三篇研究报告中负责部分的撰写和修改，撰写内容20000字+。
 - 借助Wind、iFinD、欧睿等平台，搜集整理公司数据，包括:内部控制、财务数据、业务规划（产品渠道），绘制关键图表(Excel、PPT)，分析公司发展变动情况；参与上市公司交流会议，记录会议关键信息，如企业盈利预期、渠道扩张以及品牌建设规划。
