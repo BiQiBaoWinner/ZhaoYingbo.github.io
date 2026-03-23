@@ -2,7 +2,27 @@
 
 **2026.1 - 2026.3 | 金斧子基金销售有限公司 | 星荣事业群**
 
-负责使用L1行情数据进行日频因子挖掘与检验，着重关注因子的金融学逻辑以及对隔日的截面Alpha捕捉能力。完善因子检验框架，补充“因子风格分解模块”+“FamaMacBeth增量Alpha检验模块”。
+独立完成A股高频微观结构日频因子研究，围绕盘口供给、价格推动、流动性摩擦、开盘定价效率与交易集中度构建 50+ 因子框架，形成'Minute_logvol_skew'、'Minute_MPC5_max_v2'、'tick_LS_99'、'tick_VD15m'等多条稳定alph主线，着重关注因子的金融学逻辑以及对隔日的截面Alpha捕捉能力。完善因子检验框架，补充“因子风格分解模块”+“FamaMacBeth增量Alpha检验模块”。
+
+<div style="text-align:center;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/Minute_logvol_skew_groups_5_20260228_175346.png" alt="Minute_logvol_skew" style="width:50%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/Minute_MPC5_max_v2_groups_5_20260126_111944.png" alt="Minute_MPC5_max_v2" style="width:50%; display:inline-block;">
+
+</div>
+
+<div style="text-align:center;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/tick_LS_99_groups_5_20260212_134322.png" alt="LS_99" style="width:50%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/tick_VD15m_groups_5_20260319_135954.png" alt="tick_VD15m" style="width:50%; display:inline-block;">
+</div>
+
+#### 工作内容：
+
+- 围绕A股L1行情数据，搭建了覆盖订单簿、成交行为、价格发现、流动性摩擦与隔夜反馈的高频因子研究框架。
+- 研究重系统实现并迭代了 50+ 个候选因子，通过统一的回测、相似因子分析和中性化筛选出多条稳健主线：
+  - 'Minute_logvol_skew'用成交量分布不对称捕捉拥挤交易后的价格修正
+  - 'Minute_MPC5_max_v2'刻画收盘附近被成交量确认的价格推动
+  - 'tick_LS_99'刻画极端流动性摩擦
+  - 'tick_VD15m'刻画开盘定价效率偏离，均表现出较强的多空净值单调性与可交易性
 
 ---
 
