@@ -30,7 +30,6 @@
 </div>
 负责1sTick股票高频因子的挖掘与检验，专注于因子的金融学逻辑和回测表现。参与ETF底仓调优项目，优化产品票池结构，在风险承受范围内最大限度提升产品收益。
 
-
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:30%; display:inline-block;">
   <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001ic_avg.png" alt="IC表现" style="width:30%; display:inline-block;">
@@ -50,6 +49,7 @@
 - 基于手工T0交易员提供的加/减仓票池 (Pool1/Pool2)，设计并实现“**市值权重降序减仓**”调仓逻辑，在控制跟踪误差 (TE ≈ 0.0028) 前提下，将产品**年化收益率由 3.08\% 提升至 4.63\%**(加仓4倍)；进一步测算极限调仓场景，验证在风险可控范围内可实现 6.18\% 年化收益，为产品达标6\%收益目标提供量化支撑。
 
 <!-- ===== 策略回测表格开始 ===== -->
+
 <div style="width:100%;overflow-x:auto;margin:25px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 <table style="border-collapse:collapse;font-size:0.8em;min-width:900px;width:100%;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:6px;overflow:hidden;background:#fff">
 <thead>
