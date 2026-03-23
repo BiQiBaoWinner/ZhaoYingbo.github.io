@@ -32,7 +32,7 @@
   <img src="/zhaoyingbo.github.io/static/assets/img/ETFbaseadjust.png" alt="产品表现" style="width:30%;">
 </div> -->
 
-<iframe src="ETF_Strategy_Table.html" 
+<iframe src="/static/ETF_Strategy_Table.html" 
         style="width: 100%; height: 650px; border: none; overflow: hidden;" 
         scrolling="no">
 </iframe>
