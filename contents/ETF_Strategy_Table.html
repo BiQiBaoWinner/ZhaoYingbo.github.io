@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>策略回测数据表</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px; /* 表格周围的留白 */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: transparent; /* 背景透明，融入主页 */
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+        .styled-table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 0.85em; /* 字体稍微调小了一点，适应嵌入 */
+            min-width: 900px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            background: #fff;
+        }
+        .styled-table thead tr {
+            background-color: #009879; /* 换了一个更清新的绿色，也可以改回 #2c3e50 */
+            color: #ffffff;
+            text-align: center;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 10px 12px;
+            border: 1px solid #dddddd;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        .styled-table tbody tr:hover {
+            background-color: #eef2f5;
+            font-weight: 500;
+            color: #009879;
+        }
+        .num-col {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+        .text-col {
+            text-align: center;
+        }
+        .header-main {
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="table-container">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th rowspan="2" class="text-col">Thres_n</th>
+                    <th rowspan="2" class="text-col">指标</th>
+                    <th colspan="2" class="header-main">T0</th>
+                    <th colspan="2" class="header-main">底仓</th>
+                    <th colspan="2" class="header-main">产品</th>
+                </tr>
+                <tr>
+                    <th>调整前</th>
+                    <th>调整后</th>
+                    <th>调整前</th>
+                    <th>调整后</th>
+                    <th>调整前</th>
+                    <th>调整后</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 2 -->
+                <tr><td class="text-col">2</td><td class="text-col">年化收益率</td><td class="num-col">3.08%</td><td class="num-col">3.24%</td><td class="num-col">-5.34%</td><td class="num-col">-2.36%</td><td class="num-col">-2.27%</td><td class="num-col">0.88%</td></tr>
+                <tr><td class="text-col">2</td><td class="text-col">年化波动率</td><td class="num-col">0.22%</td><td class="num-col">0.23%</td><td class="num-col">1.62%</td><td class="num-col">1.30%</td><td class="num-col">1.66%</td><td class="num-col">1.34%</td></tr>
+                <tr><td class="text-col">2</td><td class="text-col">夏普比率</td><td class="num-col">14.12</td><td class="num-col">13.85</td><td class="num-col">-3.31</td><td class="num-col">-1.82</td><td class="num-col">-1.37</td><td class="num-col">0.66</td></tr>
+                <tr><td class="text-col">2</td><td class="text-col">最大回撤</td><td class="num-col">-0.01%</td><td class="num-col">-0.01%</td><td class="num-col">-1.10%</td><td class="num-col">-0.65%</td><td class="num-col">-0.85%</td><td class="num-col">-0.54%</td></tr>
+                <!-- 5 -->
+                <tr><td class="text-col">5</td><td class="text-col">年化收益率</td><td class="num-col">3.08%</td><td class="num-col">4.29%</td><td class="num-col">-5.34%</td><td class="num-col">-2.67%</td><td class="num-col">-2.27%</td><td class="num-col">1.62%</td></tr>
+                <tr><td class="text-col">5</td><td class="text-col">年化波动率</td><td class="num-col">0.22%</td><td class="num-col">0.35%</td><td class="num-col">1.62%</td><td class="num-col">3.03%</td><td class="num-col">1.66%</td><td class="num-col">2.97%</td></tr>
+                <tr><td class="text-col">5</td><td class="text-col">夏普比率</td><td class="num-col">14.12</td><td class="num-col">12.38</td><td class="num-col">-3.31</td><td class="num-col">-0.88</td><td class="num-col">-1.37</td><td class="num-col">0.55</td></tr>
+                <tr><td class="text-col">5</td><td class="text-col">最大回撤</td><td class="num-col">-0.01%</td><td class="num-col">-0.01%</td><td class="num-col">-1.10%</td><td class="num-col">-1.07%</td><td class="num-col">-0.85%</td><td class="num-col">-0.74%</td></tr>
+                <!-- 11 -->
+                <tr><td class="text-col">11</td><td class="text-col">年化收益率</td><td class="num-col">3.08%</td><td class="num-col">5.52%</td><td class="num-col">-5.34%</td><td class="num-col">-3.17%</td><td class="num-col">-2.27%</td><td class="num-col">2.35%</td></tr>
+                <tr><td class="text-col">11</td><td class="text-col">年化波动率</td><td class="num-col">0.22%</td><td class="num-col">0.40%</td><td class="num-col">1.62%</td><td class="num-col">8.19%</td><td class="num-col">1.66%</td><td class="num-col">8.10%</td></tr>
+                <tr><td class="text-col">11</td><td class="text-col">夏普比率</td><td class="num-col">14.12</td><td class="num-col">13.91</td><td class="num-col">-3.31</td><td class="num-col">-0.39</td><td class="num-col">-1.37</td><td class="num-col">0.29</td></tr>
+                <tr><td class="text-col">11</td><td class="text-col">最大回撤</td><td class="num-col">-0.01%</td><td class="num-col">-0.01%</td><td class="num-col">-1.10%</td><td class="num-col">-2.27%</td><td class="num-col">-0.85%</td><td class="num-col">-2.15%</td></tr>
+                <!-- 19.5 -->
+                <tr><td class="text-col">19.5</td><td class="text-col">年化收益率</td><td class="num-col">3.08%</td><td class="num-col">6.18%</td><td class="num-col">-5.34%</td><td class="num-col">-4.34%</td><td class="num-col">-2.27%</td><td class="num-col">1.84%</td></tr>
+                <tr><td class="text-col">19.5</td><td class="text-col">年化波动率</td><td class="num-col">0.22%</td><td class="num-col">0.41%</td><td class="num-col">1.62%</td><td class="num-col">8.69%</td><td class="num-col">1.66%</td><td class="num-col">8.58%</td></tr>
+                <tr><td class="text-col">19.5</td><td class="text-col">夏普比率</td><td class="num-col">14.12</td><td class="num-col">15.03</td><td class="num-col">-3.31</td><td class="num-col">-0.50</td><td class="num-col">-1.37</td><td class="num-col">0.21</td></tr>
+                <tr><td class="text-col">19.5</td><td class="text-col">最大回撤</td><td class="num-col">-0.02%</td><td class="num-col">-0.02%</td><td class="num-col">-1.10%</td><td class="num-col">-2.27%</td><td class="num-col">-0.85%</td><td class="num-col">-2.15%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
