@@ -203,3 +203,34 @@ $$
 
 * 研究上市公司投资者情绪与股利分配政策的相关性，并通过调研问卷法补充考察非上市公司决策者对投资者情绪的反应。
 * 负责借助Python 的文本分析能力构造投资者情绪指数，最终构建多元回归模型。
+
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr style="background: #f5f5f5;">
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">公式名称</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">表达式</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">Lintner股利模型</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$$ m = DIV_1 - DIV_0 = s \cdot (r \cdot EPS_1 - DIV_0) $$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">主题权重计算</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$$ W_i = \frac{L_i \text{的主题包含的评论数量}}{\text{评论总数量}} $$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">看涨指标</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$$ B_{ts} = \frac{\sum W_i L_i^{pos} - \sum W_i L_i^{neg}}{\sum W_i L_i^{pos} + \sum W_i L_i^{neg}} $$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">投资者情绪指数(TSI)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$$ TSI = B_{ts} \cdot \ln(1 + M^{pos} + M^{neg} + M^{neu}) $$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">多元回归模型</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$$ r = a_0 + a_1 InSent + a_2 Size + a_3 Lev + a_4 ROE + a_5 Growth + a_6 BM + a_7 SOE + a_8 Top + a_9 Balance + \epsilon $$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">指数移动平均(EMA)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$$ EMA_N(x_n) = \frac{2}{N+1} \sum_{k=0}^{\infty} \left(\frac{N-1}{N+1}\right)^k x_{n-k} $$</td>
+    </tr>
+  </table>
