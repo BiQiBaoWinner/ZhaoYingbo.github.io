@@ -18,6 +18,10 @@
 * 构建以业务价值为导向的三分类模型。基于脱敏用户画像与行为数据，以用户价值加权的WAUC 为优化目标，精准识别高粘性客户（高频复购）。
 * 由数据清洗（缺失填补、低方差过滤）到特征工程（KMeans 聚类衍生、WOE 分箱），再到变量筛选（XGBoost + IV），最后进行多模型训练（XGBoost/LightGBM/CatBoost），完成端到端建模流程。单模型WAUC 达0.5788（LGBM），Stacking 融合后提升至0.5799，显著优于基线。
 
+<div style="text-align:center;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/fintech.png" alt="金融科技" style="width:80%; display:inline-block;">
+</div>
+
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
 美国大学生数学建模竞赛（MCM/ICM）<br>
@@ -62,14 +66,32 @@ MathorCup 数学建模竞赛 <br>
 - **类扇形覆盖修正**：引入旋转角度 β 优化三扇区实际覆盖范围
 - **聚类方法对比**：系统聚类、DBSCAN、K-Means 多维指标评估
 
-| 公式                           | 表达式                                                                                            |
-| ------------------------------ | ------------------------------------------------------------------------------------------------- |
-| 辐射范围半径（随偏离角度衰减） | $\displaystyle r(\alpha) = -\frac{3r}{2\pi}\alpha + r$                                          |
-| 基站类型选择参数               | $\displaystyle \eta = \frac{traffic(X^m)}{traffic(X^M)}$                                        |
-| 基站类型选择函数               | $\displaystyle \phi = \frac{\Delta\gamma}{\gamma(X^m)} - \eta$                                  |
-| 辐射圈业务量计算               | $\displaystyle traffic(\mathcal{C}_j^i) = \sum_{(x-x_j^i)^2+(y-y_j^i)^2 \leq r^2} traffic(x,y)$ |
-| 最优旋转角度                   | $\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$          |
-
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
+  <tr style="background: #f5f5f5;">
+    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">公式</th>
+    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">表达式</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">辐射范围半径（随偏离角度衰减）</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle r(\alpha) = -\frac{3r}{2\pi}\alpha + r$</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">基站类型选择参数</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \eta = \frac{traffic(X^m)}{traffic(X^M)}$</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">基站类型选择函数</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \phi = \frac{\Delta\gamma}{\gamma(X^m)} - \eta$</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">辐射圈业务量计算</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle traffic(\mathcal{C}_j^i) = \sum_{(x-x_j^i)^2+(y-y_j^i)^2 \leq r^2} traffic(x,y)$</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">最优旋转角度</td>
+    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$</td>
+  </tr>
+</table>d
 > 注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
 
 ### 主要结果:
