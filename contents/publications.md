@@ -21,6 +21,7 @@
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/fintech.png" alt="金融科技" style="width:80%; display:inline-block;">
 </div>
+> 注：AX/BX/CX为新网银行提供的客户脱敏数据，'_Max'/'_Range'/'_mul'/'_Mode'为特征工程中所使用的操作符。
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
@@ -154,7 +155,7 @@ APMCM 亚太大学生数学建模竞赛 <br>
 - **ARIMA**：时间序列分析，捕捉长期趋势与周期性波动
 - **虚拟变量回归**：量化工业革命、气候带、自然灾害的影响
 
-* *关键公式-自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
+* 关键公式-自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
 
 $$
 Tem_{t}^{g} = \xi_{0} + \xi_{1} \cdot VolcanicEruption_{t} + \xi_{2} \cdot ForestFire_{t} + \xi_{3} \cdot Pneumonia_{t} + \epsilon_t
