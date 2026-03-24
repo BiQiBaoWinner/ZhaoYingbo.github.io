@@ -37,19 +37,11 @@
 $$
 CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
 $$
-
 其中：
-
 $$
-\begin{cases} 
-X_1 = \sum_{j=1}^{14} b_{j1} CS_j \\[2ex]
-X_2 = \sum_{j=1}^{14} b_{j2} CS_j 
-\end{cases}
-\qquad
-\begin{cases} 
-Y_1 = \sum_{k=1}^{4} c_{k1} \text{Quantity}_k \\[2ex]
-Y_2 = \sum_{k=1}^{4} c_{k2} \text{Quantity}_k 
-\end{cases}
+\begin{cases} X_1 = \sum_{j=1}^{14} b_{j1} CS_j \\[2ex] X_2 = \sum_{j=1}^{14} b_{j2} CS_j \end{cases}
+\text{\qquad}
+\begin{cases} Y_1 = \sum_{k=1}^{4} c_{k1} \text{Quantity}_k \\[2ex] Y_2 = \sum_{k=1}^{4} c_{k2} \text{Quantity}_k \end{cases}
 $$
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
@@ -66,50 +58,50 @@ MathorCup 数学建模竞赛 <br>
 - **类扇形覆盖修正**：引入旋转角度 β 优化三扇区实际覆盖范围
 - **聚类方法对比**：系统聚类、DBSCAN、K-Means 多维指标评估
 
-<table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
-  <tr style="background: #f5f5f5;">
-    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">公式</th>
-    <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">表达式</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">辐射范围半径（随偏离角度衰减）</td>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle r(\alpha) = -\frac{3r}{2\pi}\alpha + r$</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">基站类型选择参数</td>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \eta = \frac{traffic(X^m)}{traffic(X^M)}$</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">基站类型选择函数</td>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \phi = \frac{\Delta\gamma}{\gamma(X^m)} - \eta$</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">辐射圈业务量计算</td>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle traffic(\mathcal{C}_j^i) = \sum_{(x-x_j^i)^2+(y-y_j^i)^2 \leq r^2} traffic(x,y)$</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">最优旋转角度</td>
-    <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$</td>
-  </tr>
-</table>d
-> 注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
+    <tr style="background: #f5f5f5;">
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">公式</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">表达式</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">辐射范围半径（随偏离角度衰减）</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle r(\alpha) = -\frac{3r}{2\pi}\alpha + r$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">基站类型选择参数</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \eta = \frac{traffic(X^m)}{traffic(X^M)}$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">基站类型选择函数</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \phi = \frac{\Delta\gamma}{\gamma(X^m)} - \eta$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">辐射圈业务量计算</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle traffic(\mathcal{C}_j^i) = \sum_{(x-x_j^i)^2+(y-y_j^i)^2 \leq r^2} traffic(x,y)$</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">最优旋转角度</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$</td>
+    </tr>
+  </table>d
+  > 注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
 
-### 主要结果:
+* 主要结果:
 
-| 成果指标                 | 数值             |
-| ------------------------ | ---------------- |
-| 弱覆盖点业务量覆盖率     | **92.88%** |
-| 最优旋转角度覆盖率       | **75.26%** |
-| 模型稳定性检验覆盖率范围 | 89%–93%         |
+  | 成果指标                 | 数值             |
+  | ------------------------ | ---------------- |
+  | 弱覆盖点业务量覆盖率     | **92.88%** |
+  | 最优旋转角度覆盖率       | **75.26%** |
+  | 模型稳定性检验覆盖率范围 | 89%–93%         |
 
-### 聚类方法对比:
+* 聚类方法对比:
 
-| 评价指标       | 系统聚类 | K-Means        | DBSCAN |
-| -------------- | -------- | -------------- | ------ |
-| 紧密度         | 0.52     | 0.34           | 0.29   |
-| 分割度         | 0.55     | **0.85** | 0.82   |
-| 戴维森堡丁指数 | 0.67     | **0.23** | 0.44   |
-| 邓恩指数       | 0.23     | **0.91** | 0.78   |
+  | 评价指标       | 系统聚类 | K-Means        | DBSCAN |
+  | -------------- | -------- | -------------- | ------ |
+  | 紧密度         | 0.52     | 0.34           | 0.29   |
+  | 分割度         | 0.55     | **0.85** | 0.82   |
+  | 戴维森堡丁指数 | 0.67     | **0.23** | 0.44   |
+  | 邓恩指数       | 0.23     | **0.91** | 0.78   |
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
@@ -123,15 +115,17 @@ APMCM 亚太大学生数学建模竞赛 <br>
 - **ARIMA**：时间序列分析，捕捉长期趋势与周期性波动
 - **虚拟变量回归**：量化工业革命、气候带、自然灾害的影响
 
-##### 关键公式-自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
+* *关键公式-自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
 
 $$
 Tem_{t}^{g} = \xi_{0} + \xi_{1} \cdot VolcanicEruption_{t} + \xi_{2} \cdot ForestFire_{t} + \xi_{3} \cdot Pneumonia_{t} + \epsilon_t
 $$
 
-##### 📊 模型评估与预测
+* 模型评估与预测
 
-* 采用 MSE 和 MAPE 作为模型评价指标，比较三种模型在历史数据拟合与未来预测中的表现：| 模型    | MSE           | MAPE          | 2050年预测 | 2100年预测 |
+* 采用 MSE 和 MAPE 作为模型评价指标，比较三种模型在历史数据拟合与未来预测中的表现：
+
+  | 模型    | MSE           | MAPE          | 2050年预测 | 2100年预测 |
   | ------- | ------------- | ------------- | ---------- | ---------- |
   | MLR     | 0.043         | 0.039         | 18.97°C   | 25.56°C   |
   | XGBOOST | 3.305×10⁻⁴ | 1.081×10⁻³ | 20.63°C   | 20.69°C   |
