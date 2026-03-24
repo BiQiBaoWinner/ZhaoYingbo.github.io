@@ -35,15 +35,21 @@
 
   * 碳汇公式如下：
 
-$$
-CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
-$$
-其中：
-$$
-\begin{cases} X_1 = \sum_{j=1}^{14} b_{j1} CS_j \\[2ex] X_2 = \sum_{j=1}^{14} b_{j2} CS_j \end{cases}
-\text{\qquad}
-\begin{cases} Y_1 = \sum_{k=1}^{4} c_{k1} \text{Quantity}_k \\[2ex] Y_2 = \sum_{k=1}^{4} c_{k2} \text{Quantity}_k \end{cases}
-$$
+    $$
+    CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
+    $$
+
+    其中：
+
+    $ X_1 $ 和 $ X_2 $ 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量; $ Y_1 $ 和 $ Y_2 $ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量，其计算公式如下：
+
+    $$
+    X_1 = \sum_{j=1}^{14} b_{j1} \cdot CS_j, \quad X_2 = \sum_{j=1}^{14} b_{j2} \cdot CS_j
+    $$
+
+    $$
+    Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k
+    $$
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
@@ -107,7 +113,6 @@ MathorCup 数学建模竞赛 <br>
       <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">89%–93%</td>
     </tr>
   </table>
-
 * 聚类方法对比:
 
   <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
@@ -162,7 +167,6 @@ Tem_{t}^{g} = \xi_{0} + \xi_{1} \cdot VolcanicEruption_{t} + \xi_{2} \cdot Fores
 $$
 
 * 模型评估与预测
-
 * 采用 MSE 和 MAPE 作为模型评价指标，比较三种模型在历史数据拟合与未来预测中的表现：
 
   <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
