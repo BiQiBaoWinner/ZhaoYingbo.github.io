@@ -83,25 +83,64 @@ MathorCup 数学建模竞赛 <br>
       <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">最优旋转角度</td>
       <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$</td>
     </tr>
-  </table>d
+  </table>
   > 注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
 
 * 主要结果:
 
-  | 成果指标                 | 数值             |
-  | ------------------------ | ---------------- |
-  | 弱覆盖点业务量覆盖率     | **92.88%** |
-  | 最优旋转角度覆盖率       | **75.26%** |
-  | 模型稳定性检验覆盖率范围 | 89%–93%         |
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
+    <tr style="background: #f5f5f5;">
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">成果指标</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">数值</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">弱覆盖点业务量覆盖率</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>92.88%</strong></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">最优旋转角度覆盖率</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>75.26%</strong></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">模型稳定性检验覆盖率范围</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">89%–93%</td>
+    </tr>
+  </table>
 
 * 聚类方法对比:
 
-  | 评价指标       | 系统聚类 | K-Means        | DBSCAN |
-  | -------------- | -------- | -------------- | ------ |
-  | 紧密度         | 0.52     | 0.34           | 0.29   |
-  | 分割度         | 0.55     | **0.85** | 0.82   |
-  | 戴维森堡丁指数 | 0.67     | **0.23** | 0.44   |
-  | 邓恩指数       | 0.23     | **0.91** | 0.78   |
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
+    <tr style="background: #f5f5f5;">
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">评价指标</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">系统聚类</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">K-Means</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">DBSCAN</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">紧密度</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.52</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.34</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.29</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">分割度</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.55</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>0.85</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.82</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">戴维森堡丁指数</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.67</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>0.23</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.44</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">邓恩指数</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.23</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;"><strong>0.91</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.78</td>
+    </tr>
+  </table>
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
@@ -125,11 +164,36 @@ $$
 
 * 采用 MSE 和 MAPE 作为模型评价指标，比较三种模型在历史数据拟合与未来预测中的表现：
 
-  | 模型    | MSE           | MAPE          | 2050年预测 | 2100年预测 |
-  | ------- | ------------- | ------------- | ---------- | ---------- |
-  | MLR     | 0.043         | 0.039         | 18.97°C   | 25.56°C   |
-  | XGBOOST | 3.305×10⁻⁴ | 1.081×10⁻³ | 20.63°C   | 20.69°C   |
-  | ARIMA   | —            | —            | 17.44°C   | 24.24°C   |
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
+    <tr style="background: #f5f5f5;">
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">模型</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">MSE</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">MAPE</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">2050年预测</th>
+      <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">2100年预测</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">MLR</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.043</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">0.039</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">18.97°C</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">25.56°C</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">XGBOOST</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">3.305×10⁻⁴</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">1.081×10⁻³</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">20.63°C</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">20.69°C</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">ARIMA</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">—</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">—</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">17.44°C</td>
+      <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">24.24°C</td>
+    </tr>
+  </table>
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
