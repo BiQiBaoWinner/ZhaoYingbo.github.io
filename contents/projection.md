@@ -11,9 +11,9 @@
 #### 具体内容:
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/csi300.png" alt="csi300" style="width:80%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/csi800.png" alt="csi800" style="width:80%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/mkt.png" alt="mkt" style="width:80%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi300.png" alt="csi300" style="width:80%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi800.png" alt="csi800" style="width:80%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/mkt.png" alt="mkt" style="width:80%; display:inline-block;">
 </div>
 
 - 111
