@@ -24,7 +24,6 @@
 > g(\lambda) = -\log\left(\frac{1}{B}\sum_{j=1}^{B} \exp(\lambda^\top r_j)\right) + \lambda^\top c
 > $$
 >
->
 > - $B$：样本数量
 > - $c$：每维奖励的分位数阈值
 > - 约束实现：$\lambda=\mathrm{softplus}(\tau)$ 保证 $\lambda\ge 0$
@@ -35,7 +34,7 @@
             <tr>
             <th>维度</th>
             <th>含义</th>
-            <th>数学定义</th>
+            <th>公式定义</th>
             </tr>
         </thead>
         <tbody>
