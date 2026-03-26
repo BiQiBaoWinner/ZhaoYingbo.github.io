@@ -4,7 +4,8 @@
 </div>
 
 > 提出融合大语言模型与多目标强化学习的因子挖掘框架，以解决传统强化学习方法面临的奖励稀疏和非平稳性的问题。
-    最终实验结果：样本外的全市场组合上，预测周期为20日时，因子IC > 10%
+> 最终实验结果：样本外的全市场组合上，预测周期为20日时，因子IC > 10%
+
 <div style="text-align:center;">
     <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/公式化因子挖掘任务对应的马尔可夫决策过程.png" alt="markov" style="width:40%; display:inline-block;">
     <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/三大模块.png" alt="三大模块" style="width:40%; display:inline-block;">
@@ -17,44 +18,50 @@
 </div>
 
 > __决策层&演化层__：引入 PPS（预测能力）、RRE（分布稳定性）、PFS（抗波动性）、DH（因子多样性） ，并借助Pareto优化得到Agent的奖励；对于因子构建和因子库维护，我们采用RPN（逆波兰表示法）构建可执行的符号化因子，结合非法动作掩码与MaskablePPO保障语法合法性，并在归档时从预测能力和增量信息两方面进行过滤。
-    **Pareto优化**：给定奖励向量 $r_j \in \mathbb{R}^d$，优化 $\lambda \ge 0$：
-        $$
-        g(\lambda) = -\log\left(\frac{1}{B}\sum_{j=1}^{B} \exp(\lambda^\top r_j)\right) + \lambda^\top c
-        $$
-    - $B$：样本数量  
-    - $c$：每维奖励的分位数阈值  
-    - 约束实现：$\lambda=\mathrm{softplus}(\tau)$ 保证 $\lambda\ge 0$
-<table>
-<thead>
-    <tr>
-    <th>维度</th>
-    <th>含义</th>
-    <th>数学定义</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-    <td>PPS(IC)</td>
-    <td>预测能力（截面 IC 的时间均值）</td>
-    <td>$$\mathrm{PPS}=\mathrm{mean}_t(\mathrm{IC}_t)$$</td>
-    </tr>
-    <tr>
-    <td>RRE</td>
-    <td>排名稳定性（相邻期秩分布 KL 距离的稳定度）</td>
-    <td>$$\mathrm{RRE}=\mathrm{mean}_t\left(\frac{1}{1+\mathrm{KL}(p_t\|p_{t-1})}\right)$$</td>
-    </tr>
-    <tr>
-    <td>PFS</td>
-    <td>扰动鲁棒性（原始与噪声扰动相关性均值）</td>
-    <td>$$\mathrm{PFS}=\mathrm{mean}_t(\rho(\text{orig},\text{noisy}))$$</td>
-    </tr>
-    <tr>
-    <td>DH</td>
-    <td>多样性（协方差谱熵归一化）</td>
-    <td>$$\mathrm{DH}=\frac{-\sum_i p_i\log p_i}{\log n},\quad p_i=\frac{\lambda_i}{\sum_k\lambda_k}$$</td>
-    </tr>
-</tbody>
-</table>
+> **Pareto优化**：给定奖励向量 $r_j \in \mathbb{R}^d$，优化 $\lambda \ge 0$：
+>
+> $$
+> g(\lambda) = -\log\left(\frac{1}{B}\sum_{j=1}^{B} \exp(\lambda^\top r_j)\right) + \lambda^\top c
+> $$
+>
+>
+> - $B$：样本数量
+> - $c$：每维奖励的分位数阈值
+> - 约束实现：$\lambda=\mathrm{softplus}(\tau)$ 保证 $\lambda\ge 0$
+
+<div align="center">
+    <table>
+        <thead>
+            <tr>
+            <th>维度</th>
+            <th>含义</th>
+            <th>数学定义</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>PPS(IC)</td>
+            <td>预测能力（截面 IC 的时间均值）</td>
+            <td>$$\mathrm{PPS}=\mathrm{mean}_t(\mathrm{IC}_t)$$</td>
+            </tr>
+            <tr>
+            <td>RRE</td>
+            <td>排名稳定性（相邻期秩分布 KL 距离的稳定度）</td>
+            <td>$$\mathrm{RRE}=\mathrm{mean}_t\left(\frac{1}{1+\mathrm{KL}(p_t\|p_{t-1})}\right)$$</td>
+            </tr>
+            <tr>
+            <td>PFS</td>
+            <td>扰动鲁棒性（原始与噪声扰动相关性均值）</td>
+            <td>$$\mathrm{PFS}=\mathrm{mean}_t(\rho(\text{orig},\text{noisy}))$$</td>
+            </tr>
+            <tr>
+            <td>DH</td>
+            <td>多样性（协方差谱熵归一化）</td>
+            <td>$$\mathrm{DH}=\frac{-\sum_i p_i\log p_i}{\log n},\quad p_i=\frac{\lambda_i}{\sum_k\lambda_k}$$</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 #### 沪深300&中证800实验结果:
 
@@ -65,8 +72,6 @@
 
 * 本项目成功将强化学习算法应用于中国A股市场的量化投资策略构建，实验结果表明：
 
-    - 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；
-
-    - 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定;
-
-    - 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性.
+  - 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；
+  - 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定;
+  - 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性.
