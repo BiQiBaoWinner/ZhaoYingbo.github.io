@@ -11,9 +11,9 @@
 #### 具体内容:
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:30%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001ic_avg.png" alt="IC表现" style="width:30%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001_pnl_plot_45_3.png" alt="产品表现" style="width:30%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/csi300.png" alt="csi300" style="width:80%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/csi800.png" alt="csi800" style="width:80%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/mkt.png" alt="mkt" style="width:80%; display:inline-block;">
 </div>
 
 - 111
