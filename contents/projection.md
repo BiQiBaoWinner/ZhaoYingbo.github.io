@@ -7,14 +7,14 @@
 > 最终实验结果：样本外的全市场组合上，预测周期为20日时，因子IC > 10%
 
 <div style="text-align:center;">
-    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/公式化因子挖掘任务对应的马尔可夫决策过程.png" alt="markov" style="width:40%; display:inline-block;">
+    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/公式化因子挖掘任务对应的马尔可夫决策过程.png" alt="markov" style="width:50%; display:inline-block;">
     <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/三大模块.png" alt="三大模块" style="width:40%; display:inline-block;">
 </div>
 
 > __感知层__：利用Ollama部署DeepSeek‑14B等开源大模型，并以此对挖掘过程中的因子库进行语义解析，将因子逻辑的语义表征融入强化学习状态空间，引导策略网络生成具备经济可解释性的公式化因子；
 
 <div style="text-align:center;">
-    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/融入大语言模型解析结果的感知层.png" alt="markov" style="width:40%; display:inline-block;">
+    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/融入大语言模型解析结果的感知层.png" alt="markov" style="width:50%; display:inline-block;">
 </div>
 
 > __决策层&演化层__：引入 PPS（预测能力）、RRE（分布稳定性）、PFS（抗波动性）、DH（因子多样性） ，并借助Pareto优化得到Agent的奖励；对于因子构建和因子库维护，我们采用RPN（逆波兰表示法）构建可执行的符号化因子，结合非法动作掩码与MaskablePPO保障语法合法性，并在归档时从预测能力和增量信息两方面进行过滤。
