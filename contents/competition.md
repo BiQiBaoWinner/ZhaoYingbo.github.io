@@ -54,25 +54,25 @@
 
 * **主导构建"森林碳汇与管理决策"综合模型**，从全球气候变化背景出发，将复杂的生态、经济与社会因素（如树种生物量、林产品产量、人口及旅游发展）进行量化整合。
 * 整理相关文献，根据生物量膨胀系数法计算得到树种的生物量和碳储量，以此借助PCA算法对14种主要树种的碳储量数据进行降维，建立综合指标对碳储量进行代理后进行多元回归分析，成功构建了一个能预测碳储量并指导最优管理决策的模型，最终模型R²高达0.8031，验证了其强大的解释力；除此之外，在修正模型中还考虑到了人口特征以及旅游发展特征。
-* 团队角色：核心建模成员，负责模型框架设计、算法实现与论文撰写。
 
-  * 碳汇公式如下：
+关键指标度量：
+* 碳汇公式如下：
 
-    $$
-    CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
-    $$
+$$
+CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
+$$
 
   * $X_1$ 和 $X_2$ 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量, 其计算公式如下：
 
-    $$
-    X_1 = \sum_{j=1}^{14} b_{j1} \cdot CS_j, \quad X_2 = \sum_{j=1}^{14} b_{j2} \cdot CS_j
-    $$
+$$
+X_1 = \sum_{j=1}^{14} b_{j1} \cdot CS_j, \quad X_2 = \sum_{j=1}^{14} b_{j2} \cdot CS_j
+$$
 
   * $Y_1$ 和 $Y_2$ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
 
-    $$
-    Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k
-    $$
+$$
+Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k
+$$
 
 <div id="comp-2022-mathor" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
@@ -117,60 +117,65 @@ MathorCup 数学建模竞赛 <br>
   </table>
   注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
 
-* 主要结果:
+<div class="competition-tables">
+  <div class="competition-table">
+    <div class="competition-table-title">主要结果</div>
+    <table style="width: 100%; border-collapse: collapse; margin: 0; background: #fff;">
+      <tr style="background: #f5f5f5;">
+        <th style="border: 1px solid #ddd; padding: 12px;">成果指标</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">数值</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">弱覆盖点业务量覆盖率</td>
+        <td style="border: 1px solid #ddd; padding: 10px;"><strong>92.88%</strong></td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">最优旋转角度覆盖率</td>
+        <td style="border: 1px solid #ddd; padding: 10px;"><strong>75.26%</strong></td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">模型稳定性检验覆盖率范围</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">89%–93%</td>
+      </tr>
+    </table>
+  </div>
 
-  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
-    <tr style="background: #f5f5f5;">
-      <th style="border: 1px solid #ddd; padding: 12px;">成果指标</th>
-      <th style="border: 1px solid #ddd; padding: 12px;">数值</th>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">弱覆盖点业务量覆盖率</td>
-      <td style="border: 1px solid #ddd; padding: 10px;"><strong>92.88%</strong></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">最优旋转角度覆盖率</td>
-      <td style="border: 1px solid #ddd; padding: 10px;"><strong>75.26%</strong></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">模型稳定性检验覆盖率范围</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">89%–93%</td>
-    </tr>
-  </table>
-* 聚类方法对比:
-
-  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
-    <tr style="background: #f5f5f5;">
-      <th style="border: 1px solid #ddd; padding: 12px;">评价指标</th>
-      <th style="border: 1px solid #ddd; padding: 12px;">系统聚类</th>
-      <th style="border: 1px solid #ddd; padding: 12px;">K-Means</th>
-      <th style="border: 1px solid #ddd; padding: 12px;">DBSCAN</th>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">紧密度</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.52</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.34</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.29</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">分割度</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.55</td>
-      <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.85</strong></td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.82</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">戴维森堡丁指数</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.67</td>
-      <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.23</strong></td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.44</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">邓恩指数</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.23</td>
-      <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.91</strong></td>
-      <td style="border: 1px solid #ddd; padding: 10px;">0.78</td>
-    </tr>
-  </table>
+  <div class="competition-table">
+    <div class="competition-table-title">聚类方法对比</div>
+    <table style="width: 100%; border-collapse: collapse; margin: 0; background: #fff;">
+      <tr style="background: #f5f5f5;">
+        <th style="border: 1px solid #ddd; padding: 12px;">评价指标</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">系统聚类</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">K-Means</th>
+        <th style="border: 1px solid #ddd; padding: 12px;">DBSCAN</th>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">紧密度</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.52</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.34</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.29</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">分割度</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.55</td>
+        <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.85</strong></td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.82</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">戴维森堡丁指数</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.67</td>
+        <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.23</strong></td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.44</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 10px;">邓恩指数</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.23</td>
+        <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.91</strong></td>
+        <td style="border: 1px solid #ddd; padding: 10px;">0.78</td>
+      </tr>
+    </table>
+  </div>
+</div>
 
 <div id="comp-2022-apmcm" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">

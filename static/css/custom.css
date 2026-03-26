@@ -69,3 +69,22 @@ ul li strong {
 .competition-anchor {
   scroll-margin-top: 90px;
 }
+
+.competition-tables {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 12px 0 18px;
+}
+
+.competition-table-title {
+  font-weight: 600;
+  color: #1f2d3d;
+  margin: 2px 0 8px;
+}
+
+@media (max-width: 900px) {
+  .competition-tables {
+    grid-template-columns: 1fr;
+  }
+}
