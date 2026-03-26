@@ -56,12 +56,11 @@
 </tbody>
 </table>
 
-#### 实验进展:
+#### 沪深300&中证800实验结果:
 
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi300.png" alt="csi300" style="width:80%; display:inline-block;">
   <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi800.png" alt="csi800" style="width:80%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/mkt.png" alt="mkt" style="width:80%; display:inline-block;">
 </div>
 
 * 本项目成功将强化学习算法应用于中国A股市场的量化投资策略构建，实验结果表明：
