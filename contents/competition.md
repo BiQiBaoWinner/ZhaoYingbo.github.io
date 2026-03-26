@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 <style>
     /* 全局表格样式 - 确保所有表格内容居中 */
     table td, table th {
@@ -56,19 +58,21 @@
 
   * 碳汇公式如下：
 
-    <div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; overflow-x: auto;">
-      CS<sub>t</sub> = CS<sub>trees</sub> + CS<sub>forestry-products</sub> = (1 - λ)<sup>t</sup> Σ<sub>i=1</sub><sup>2</sup> Φ<sub>i</sub> X<sub>i</sub> + (1 + μ)<sup>t</sup> Σ<sub>i=1</sub><sup>2</sup> φ<sub>i</sub> Y<sub>i</sub>
-    </div>
-  * X`<sub>`1`</sub>` 和 X`<sub>`2`</sub>` 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量, 其计算公式如下：
+    $$
+    CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
+    $$
 
-    <div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; overflow-x: auto;">
-      X<sub>1</sub> = Σ<sub>j=1</sub><sup>14</sup> b<sub>j1</sub> · CS<sub>j</sub>, X<sub>2</sub> = Σ<sub>j=1</sub><sup>14</sup> b<sub>j2</sub> · CS<sub>j</sub>
-    </div>
-  * Y`<sub>`1`</sub>` 和 Y`<sub>`2`</sub>` 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
+  * $X_1$ 和 $X_2$ 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量, 其计算公式如下：
 
-    <div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; overflow-x: auto;">
-      Y<sub>1</sub> = Σ<sub>k=1</sub><sup>4</sup> c<sub>k1</sub> · Quantity<sub>k</sub>, Y<sub>2</sub> = Σ<sub>k=1</sub><sup>4</sup> c<sub>k2</sub> · Quantity<sub>k</sub>
-    </div>
+    $$
+    X_1 = \sum_{j=1}^{14} b_{j1} \cdot CS_j, \quad X_2 = \sum_{j=1}^{14} b_{j2} \cdot CS_j
+    $$
+
+  * $Y_1$ 和 $Y_2$ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
+
+    $$
+    Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k
+    $$
 
 <div id="comp-2022-mathor" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
@@ -92,26 +96,26 @@ MathorCup 数学建模竞赛 <br>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">辐射范围半径（随偏离角度衰减）</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">r(α) = -3r/2π · α + r</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle r(\alpha) = -\frac{3r}{2\pi}\alpha + r$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">基站类型选择参数</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">η = traffic(X<sup>m</sup>) / traffic(X<sup>M</sup>)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle \eta = \frac{traffic(X^m)}{traffic(X^M)}$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">基站类型选择函数</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">φ = Δγ/γ(X<sup>m</sup>) - η</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle \phi = \frac{\Delta\gamma}{\gamma(X^m)} - \eta$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">辐射圈业务量计算</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">traffic(𝒞<sub>j</sub><sup>i</sup>) = Σ<sub>(x-x<sub>j</sub><sup>i</sup>)<sup>2</sup>+(y-y<sub>j</sub><sup>i</sup>)<sup>2</sup> ≤ r<sup>2</sup></sub> traffic(x,y)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle traffic(\mathcal{C}_j^i) = \sum_{(x-x_j^i)^2+(y-y_j^i)^2 \leq r^2} traffic(x,y)$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">最优旋转角度</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">β* = arg max<sub>β<sub>n</sub></sub> { traffic(ℛ<sub>j</sub><sup>i</sup>, β<sub>n</sub>) }</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$</td>
     </tr>
   </table>
-  注：𝒞<sub>j</sub><sup>i</sup> 表示以 Q<sub>j</sub><sup>i</sup> 为圆心的圆形辐射区域，ℛ<sub>j</sub><sup>i</sup> 表示修正后的三扇区覆盖区域。
+  注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
 
 * 主要结果:
 
@@ -183,9 +187,9 @@ APMCM 亚太大学生数学建模竞赛 <br>
 
 * 关键公式-自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
 
-<div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px; overflow-x: auto;">
-  Tem<sub>t</sub><sup>g</sup> = ξ<sub>0</sub> + ξ<sub>1</sub> · VolcanicEruption<sub>t</sub> + ξ<sub>2</sub> · ForestFire<sub>t</sub> + ξ<sub>3</sub> · Pneumonia<sub>t</sub> + ε<sub>t</sub>
-</div>
+$$
+Tem_{t}^{g} = \xi_{0} + \xi_{1} \cdot VolcanicEruption_{t} + \xi_{2} \cdot ForestFire_{t} + \xi_{3} \cdot Pneumonia_{t} + \epsilon_t
+$$
 
 * 模型评估与预测
 * 采用 MSE 和 MAPE 作为模型评价指标，比较三种模型在历史数据拟合与未来预测中的表现：
@@ -207,8 +211,8 @@ APMCM 亚太大学生数学建模竞赛 <br>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">XGBOOST</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">3.305×10⁻⁴</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">1.081×10⁻³</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$3.305 \times 10^{-4}$</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$1.081 \times 10^{-3}$</td>
       <td style="border: 1px solid #ddd; padding: 10px;">20.63°C</td>
       <td style="border: 1px solid #ddd; padding: 10px;">20.69°C</td>
     </tr>
@@ -238,26 +242,26 @@ APMCM 亚太大学生数学建模竞赛 <br>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">Lintner股利模型</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">m = DIV<sub>1</sub> - DIV<sub>0</sub> = s · (r · EPS<sub>1</sub> - DIV<sub>0</sub>)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$m = DIV_1 - DIV_0 = s \cdot (r \cdot EPS_1 - DIV_0)$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">主题权重计算</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">W<sub>i</sub> = L<sub>i</sub>的主题包含的评论数量 / 评论总数量</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$W_i = \frac{L_i \text{的主题包含的评论数量}}{\text{评论总数量}}$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">看涨指标</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">B<sub>ts</sub> = (Σ W<sub>i</sub> L<sub>i</sub><sup>pos</sup> - Σ W<sub>i</sub> L<sub>i</sub><sup>neg</sup>) / (Σ W<sub>i</sub> L<sub>i</sub><sup>pos</sup> + Σ W<sub>i</sub> L<sub>i</sub><sup>neg</sup>)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$B_{ts} = \frac{\sum W_i L_i^{pos} - \sum W_i L_i^{neg}}{\sum W_i L_i^{pos} + \sum W_i L_i^{neg}}$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">投资者情绪指数(TSI)</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">TSI = B<sub>ts</sub> · ln(1 + M<sup>pos</sup> + M<sup>neg</sup> + M<sup>neu</sup>)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$TSI = B_{ts} \cdot \ln(1 + M^{pos} + M^{neg} + M^{neu})$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">多元回归模型</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">r = a<sub>0</sub> + a<sub>1</sub> InSent + a<sub>2</sub> Size + a<sub>3</sub> Lev + a<sub>4</sub> ROE + a<sub>5</sub> Growth + a<sub>6</sub> BM + a<sub>7</sub> SOE + a<sub>8</sub> Top + a<sub>9</sub> Balance + ε</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$r = a_0 + a_1 InSent + a_2 Size + a_3 Lev + a_4 ROE + a_5 Growth + a_6 BM + a_7 SOE + a_8 Top + a_9 Balance + \epsilon$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">指数移动平均(EMA)</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">EMA<sub>N</sub>(x<sub>n</sub>) = 2/(N+1) · Σ<sub>k=0</sub><sup>∞</sup> [(N-1)/(N+1)]<sup>k</sup> x<sub>n-k</sub></td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$EMA_N(x_n) = \frac{2}{N+1} \sum_{k=0}^{\infty} \left(\frac{N-1}{N+1}\right)^k x_{n-k}$</td>
     </tr>
   </table>
