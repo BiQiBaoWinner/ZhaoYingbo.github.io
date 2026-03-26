@@ -65,14 +65,14 @@
 #### 沪深300&中证800实验结果:
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi300.png" alt="csi300" style="width:110%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi800.png" alt="csi800" style="width:110%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi300.png" alt="csi300" style="width:120%; display:inline-block;">
+  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi800.png" alt="csi800" style="width:120%; display:inline-block;">
 </div>
 
 > 本项目成功将强化学习算法应用于中国A股市场的量化投资策略构建，实验结果表明：
->> 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；
->> 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定;
->> 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性.
+>> 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；<br>
+>> 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定; <br>
+>> 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性. <br>
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2023年6月 – 2023年8月 <br>
@@ -81,6 +81,7 @@
 
 > 报告以2022年统计数据为基础，以成都市历年数据以及全国、四川省、国家中心城市、副省级城市、中西部主要城市等可比性统计数据为参照，选取相应指标，从不同维度对成都市的投资情况进行综合分析和评价。收集整理可比性统计数据，建立评分模型对成都市现代服务业的投资发展情况展开综合分析，并完成该部分报告撰写，最终报告以成都发展改革白皮书印发。
 
+> 左表考虑了城镇化率、城镇居民家庭人均可支配收入、年末金融机构贷款余额等维度的金融业综合评分对比；右边为考虑了社会消费品零售总额、公路/铁路/航运货运量等维度的现代物流业综合评分对比。
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/成都市投资分析-金融业.png" alt="金融业" style="width:45%; display:inline-block;">
   <img src="/zhaoyingbo.github.io/static/assets/img/成都市投资分析-现代物流业.png" alt="现代物流业" style="width:45%; display:inline-block;">
