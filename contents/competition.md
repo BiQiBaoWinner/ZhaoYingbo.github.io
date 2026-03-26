@@ -1,3 +1,13 @@
+<div class="competition-nav">
+  <a href="#comp-2025">2025 良文杯</a>
+  <a href="#comp-2023">2023 金融科技</a>
+  <a href="#comp-2022-mcm">2022 MCM/ICM</a>
+  <a href="#comp-2022-mathor">2022 MathorCup</a>
+  <a href="#comp-2022-apmcm">2022 APMCM</a>
+  <a href="#comp-2022-inn">2022 创新项目</a>
+</div>
+
+<div id="comp-2025" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2025 <br> 
 第一届"良文杯"统计建模与AI预测挑战赛（金融大数据主题）
@@ -10,6 +20,7 @@
   <img src="/zhaoyingbo.github.io/static/assets/img/lwcup.png" alt="LWCUP" style="width:80%; display:inline-block;">
 </div>
 
+<div id="comp-2023" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2023 <br>
 四川省大学生金融科技建模大赛
@@ -24,6 +35,7 @@
 
 注：AX/BX/CX为新网银行提供的客户脱敏数据，'_Max'/'_Range'/'_mul'/'_Mode'为特征工程中所使用的操作符。
 
+<div id="comp-2022-mcm" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
 美国大学生数学建模竞赛（MCM/ICM）<br>
@@ -49,9 +61,10 @@
   * $ Y_1 $ 和 $ Y_2 $ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
 
     $$
-    Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k
+    Y_1 = \sum_{k=1}^{4} c_{k1} \cdot {\text{Quantity}}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot {\text{Quantity}}_k
     $$
 
+<div id="comp-2022-mathor" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
 MathorCup 数学建模竞赛 <br>
@@ -149,6 +162,7 @@ MathorCup 数学建模竞赛 <br>
     </tr>
   </table>
 
+<div id="comp-2022-apmcm" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
 APMCM 亚太大学生数学建模竞赛 <br>
@@ -201,6 +215,7 @@ $$
     </tr>
   </table>
 
+<div id="comp-2022-inn" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
 大学生创新创业训练计划——省级项目 <br>

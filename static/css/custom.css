@@ -32,3 +32,29 @@ ul li strong {
 .main-body table {
   font-size: 0.7em;
 }
+
+.competition-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0.5rem 0 1.2rem;
+}
+
+.competition-nav a {
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f0f5f9;
+  border: 1px solid #c9d6e3;
+  color: #1f2d3d;
+  font-size: 0.9em;
+}
+
+.competition-nav a:hover {
+  background: #e6eef5;
+  color: #0f1f2e;
+}
+
+.competition-anchor {
+  scroll-margin-top: 90px;
+}
