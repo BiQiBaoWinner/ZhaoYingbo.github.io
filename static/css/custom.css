@@ -34,25 +34,36 @@ ul li strong {
 }
 
 .competition-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0.5rem 0 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0.8rem 0 1.4rem;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f9fbff 0%, #f3f7fc 100%);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
 }
 
 .competition-nav a {
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
-  background: #f0f5f9;
-  border: 1px solid #c9d6e3;
-  color: #1f2d3d;
-  font-size: 0.9em;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-size: 0.88em;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  text-align: center;
 }
 
 .competition-nav a:hover {
-  background: #e6eef5;
-  color: #0f1f2e;
+  background: #eaf2ff;
+  color: #1d4ed8;
+  box-shadow: 0 6px 12px rgba(29, 78, 216, 0.12);
+  transform: translateY(-1px);
 }
 
 .competition-anchor {
