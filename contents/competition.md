@@ -21,7 +21,8 @@
 <div style="text-align:center;">
   <img src="/zhaoyingbo.github.io/static/assets/img/fintech.png" alt="金融科技" style="width:80%; display:inline-block;">
 </div>
-> 注：AX/BX/CX为新网银行提供的客户脱敏数据，'_Max'/'_Range'/'_mul'/'_Mode'为特征工程中所使用的操作符。
+
+注：AX/BX/CX为新网银行提供的客户脱敏数据，'_Max'/'_Range'/'_mul'/'_Mode'为特征工程中所使用的操作符。
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
@@ -39,15 +40,13 @@
     CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
     $$
 
-    其中：
-
-    $ X_1 $ 和 $ X_2 $ 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量, 其计算公式如下：
+  * $ X_1 $ 和 $ X_2 $ 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量, 其计算公式如下：
 
     $$
     X_1 = \sum_{j=1}^{14} b_{j1} \cdot CS_j, \quad X_2 = \sum_{j=1}^{14} b_{j2} \cdot CS_j
     $$
 
-    $ Y_1 $ 和 $ Y_2 $ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
+  * $ Y_1 $ 和 $ Y_2 $ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
 
     $$
     Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k

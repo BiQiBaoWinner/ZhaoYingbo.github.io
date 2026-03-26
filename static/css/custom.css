@@ -28,3 +28,7 @@ ul li strong {
   color: #009879;
   font-weight: 600;
 }
+
+.main-body table {
+  font-size: 0.7em;
+}

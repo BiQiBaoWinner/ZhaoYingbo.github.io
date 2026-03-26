@@ -29,7 +29,7 @@
 > - 约束实现：$\lambda=\mathrm{softplus}(\tau)$ 保证 $\lambda\ge 0$
 
 <div align="center">
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #ffffffa2;">
         <thead>
             <tr>
             <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">维度</th>
@@ -69,8 +69,7 @@
   <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi800.png" alt="csi800" style="width:110%; display:inline-block;">
 </div>
 
-* 本项目成功将强化学习算法应用于中国A股市场的量化投资策略构建，实验结果表明：
-
-  - 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；
-  - 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定;
-  - 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性.
+> 本项目成功将强化学习算法应用于中国A股市场的量化投资策略构建，实验结果表明：
+    > 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；
+    > 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定;
+    > 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性.
