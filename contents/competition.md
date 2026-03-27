@@ -71,7 +71,7 @@ $$
   * $Y_1$ 和 $Y_2$ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
 
 $$
-Y_1 = \sum_{k=1}^{4} c_{k1} \cdot \text{Quantity}_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot \text{Quantity}_k
+Y_1 = \sum_{k=1}^{4} c_{k1} \cdot Quantity_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot Quantity_k
 $$
 
 <div id="comp-2022-mathor" class="competition-anchor"></div>
