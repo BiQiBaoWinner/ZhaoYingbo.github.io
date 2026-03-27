@@ -1,3 +1,9 @@
+<div class="projection-nav">
+    <a href="#proj-2025-llm-rl"><span class="nav-year">2025</span><span class="nav-title">大模型+多目标强化学习因子挖掘</span></a>
+    <a href="#proj-2023-chengdu"><span class="nav-year">2023</span><span class="nav-title">成都市投资分析报告（2022）</span></a>
+</div>
+
+<div id="proj-2025-llm-rl" class="projection-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2025年11月 – 至今 <br>
 《基于大模型与多目标强化学习的因子挖掘研究》
@@ -76,6 +82,7 @@
 >> * 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性. 
 >>
 
+<div id="proj-2023-chengdu" class="projection-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2023年6月 – 2023年8月 <br>
 《成都市投资分析报告（2022）》

@@ -9,12 +9,12 @@
 </style>
 
 <div class="competition-nav">
-  <a href="#comp-2025">2025 良文杯</a>
-  <a href="#comp-2023">2023 金融科技</a>
-  <a href="#comp-2022-mcm">2022 MCM/ICM</a>
-  <a href="#comp-2022-mathor">2022 MathorCup</a>
-  <a href="#comp-2022-apmcm">2022 APMCM</a>
-  <a href="#comp-2022-inn">2022 创新项目</a>
+  <a href="#comp-2025"><span class="nav-year">2025</span><span class="nav-title">良文杯统计建模与AI预测挑战赛</span></a>
+  <a href="#comp-2023"><span class="nav-year">2023</span><span class="nav-title">四川省金融科技建模大赛</span></a>
+  <a href="#comp-2022-mcm"><span class="nav-year">2022</span><span class="nav-title">MCM/ICM 森林管理决策模型</span></a>
+  <a href="#comp-2022-mathor"><span class="nav-year">2022</span><span class="nav-title">MathorCup 基站站址优化</span></a>
+  <a href="#comp-2022-apmcm"><span class="nav-year">2022</span><span class="nav-title">APMCM 气温预测建模</span></a>
+  <a href="#comp-2022-inn"><span class="nav-year">2022</span><span class="nav-title">创新创业训练计划（省级）</span></a>
 </div>
 
 <div id="comp-2025" class="competition-anchor"></div>
