@@ -1,0 +1,224 @@
+/* ===== Awesome CV Style CSS ===== */
+
+.cv-page {
+    background: #f5f5f5;
+}
+
+.cv-container {
+    max-width: 210mm;
+    margin: 100px auto 40px;
+    padding: 18mm 18mm 14mm;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    font-family: "Source Sans Pro", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: #333333;
+}
+
+/* ===== Header ===== */
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8mm;
+}
+
+.cv-name {
+    font-size: 28pt;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.02em;
+}
+
+.cv-contact {
+    font-size: 9pt;
+    color: #555;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 6px;
+}
+.cv-sep {
+    color: #999;
+    margin: 0 2px;
+}
+
+.cv-photo {
+    width: 28mm;
+    height: auto;
+    border-radius: 1px;
+}
+
+/* ===== Section Title ===== */
+.cv-section {
+    margin-bottom: 5mm;
+}
+
+.cv-section-title {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #c0392b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 1.5mm;
+    border-bottom: 1.2pt solid #c0392b;
+    margin: 0 0 3.5mm 0;
+}
+
+/* ===== Entry ===== */
+.cv-entry {
+    display: flex;
+    margin-bottom: 3mm;
+    break-inside: avoid;
+}
+
+.cv-entry-sm {
+    margin-bottom: 1mm;
+}
+
+.cv-entry-date {
+    flex: 0 0 32mm;
+    font-size: 9pt;
+    color: #666;
+    padding-top: 1px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.cv-entry-content {
+    flex: 1;
+}
+
+.cv-entry-title {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.5mm;
+}
+
+.cv-entry-subtitle {
+    font-size: 9.5pt;
+    color: #555;
+    margin-bottom: 0.8mm;
+}
+
+.cv-entry-detail {
+    font-size: 8.5pt;
+    color: #666;
+    line-height: 1.5;
+}
+
+.cv-loc {
+    font-size: 8.5pt;
+    color: #999;
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+/* ===== Items List ===== */
+.cv-items {
+    margin: 1mm 0 0 0;
+    padding-left: 4.5mm;
+    list-style-type: disc;
+    font-size: 9pt;
+    color: #444;
+    line-height: 1.55;
+}
+
+.cv-items li {
+    margin-bottom: 0.8mm;
+}
+
+.cv-items li strong {
+    color: #333;
+}
+
+/* ===== Skills Two-Column ===== */
+.cv-skills-row {
+    display: flex;
+    gap: 4mm;
+}
+
+.cv-skills-col {
+    flex: 1;
+}
+
+.cv-skill {
+    font-size: 9.5pt;
+    color: #444;
+    margin-bottom: 1.2mm;
+    line-height: 1.5;
+}
+
+.cv-skill-label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* ===== Footer ===== */
+.cv-page .bg-bottom {
+    display: none;
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .cv-page .header,
+    .cv-page .bg-bottom,
+    .cv-page #theme-toggle-btn {
+        display: none !important;
+    }
+    .cv-container {
+        box-shadow: none;
+        margin: 0;
+        padding: 10mm 14mm;
+        max-width: 100%;
+    }
+}
+
+/* ===== Dark Mode Override ===== */
+[data-theme="dark"] .cv-container {
+    background: #1a1a1a;
+    color: #ccc;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+[data-theme="dark"] .cv-name { color: #eee; }
+[data-theme="dark"] .cv-section-title { color: #e74c3c; border-bottom-color: #e74c3c; }
+[data-theme="dark"] .cv-entry-title { color: #ddd; }
+[data-theme="dark"] .cv-entry-date { color: #999; }
+[data-theme="dark"] .cv-entry-subtitle { color: #aaa; }
+[data-theme="dark"] .cv-entry-detail { color: #999; }
+[data-theme="dark"] .cv-items { color: #bbb; }
+[data-theme="dark"] .cv-items li strong { color: #ddd; }
+[data-theme="dark"] .cv-skill { color: #bbb; }
+[data-theme="dark"] .cv-skill-label { color: #ddd; }
+[data-theme="dark"] .cv-contact { color: #aaa; }
+[data-theme="dark"] .cv-loc { color: #888; }
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .cv-container {
+        margin: 80px 8px 20px;
+        padding: 4mm 3mm;
+        font-size: 9pt;
+    }
+    .cv-header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .cv-photo {
+        width: 22mm;
+        margin-bottom: 3mm;
+    }
+    .cv-name { font-size: 22pt; }
+    .cv-contact { justify-content: center; font-size: 7.5pt; }
+    .cv-entry { flex-direction: column; }
+    .cv-entry-date {
+        flex: none;
+        text-align: left;
+        margin-bottom: 0.5mm;
+    }
+    .cv-section-title { font-size: 10pt; }
+    .cv-skills-row { flex-direction: column; gap: 2mm; }
+}

@@ -1,57 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Yingbo Zhao - CV" />
     <meta name="author" content="BiQiBaoWinner" />
-    <title id="title">CV - Yingbo Zhao</title>
+    <title>CV - Yingbo Zhao</title>
 
     <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
 
     <link type="text/css" href="static/css/styles.css" rel="stylesheet" />
     <link type="text/css" href="static/css/main.css" rel="stylesheet" />
-
-    <script type="text/javascript" src="static/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="static/js/marked.min.js"></script>
-
-    <script>
-        MathJax = {
-            tex: {
-                packages: {},
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: false,
-                processEnvironments: true,
-                processRefs: true,
-                digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
-                tags: 'none',
-                tagSide: 'right',
-                tagIndent: '0.8em',
-                useLabelIds: true,
-                maxMacros: 10000,
-                maxBuffer: 5 * 1024,
-                formatError: (jax, err) => jax.formatError(err)
-            }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <link type="text/css" href="static/css/cv.css" rel="stylesheet" />
 
     <script type="text/javascript" src="static/js/scripts.js"></script>
     <script type="text/javascript" src="static/js/js-yaml.min.js"></script>
 </head>
 
-<body id="page-top">
+<body id="page-top" class="cv-page">
     <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
         <div class="container px-5">
             <a id="page-top-title" class="navbar-brand fw-bold" href="index.html"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                MENU
-                <i class="bi-list"></i>
+                MENU<i class="bi-list"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
@@ -69,28 +42,134 @@
         </div>
     </nav>
 
-    <section class="top-section" style="background-image: url('static/assets/img/hk.jpg');">
-        <div class="top-section-content">
-            <div class="container px-5">
-                <h2 id="top-section-bg-text" class="text-white display-3 lh-1 font-alt">Curriculum Vitae</h2>
+    <!-- CV Content - Awesome CV Style -->
+    <div class="cv-container">
+
+        <!-- Header -->
+        <header class="cv-header">
+            <div class="cv-header-left">
+                <h1 class="cv-name">赵英博</h1>
+                <div class="cv-contact">
+                    <span>19180551440</span>
+                    <span class="cv-sep">|</span>
+                    <span>zhaoyb0715@163.com</span>
+                    <span class="cv-sep">|</span>
+                    <span>biqibaowinner.github.io</span>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="cv-header-right">
+                <img class="cv-photo" src="static/assets/img/cv-photo.jpg" alt="photo">
+            </div>
+        </header>
 
-    <div class="container px-5">
-        <div id="avatar">
-            <img class="shadow" src="static/assets/img/photo.jpg">
-        </div>
+        <!-- Education -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">教育背景</h2>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2020年9月 — 2024年6月</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title"><strong>学士</strong> &nbsp; 西南财经大学 &nbsp;<span class="cv-loc">成都</span></div>
+                    <div class="cv-entry-subtitle">投资学 &nbsp; 本科 &nbsp; 财政税务学院</div>
+                    <div class="cv-entry-detail">相关课程：投资学、统计学、计量经济学、金融风险管理、程序设计及应用（Python）</div>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2024年9月 — 2027年6月</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title"><strong>硕士</strong> &nbsp; 厦门大学 &nbsp;<span class="cv-loc">厦门</span></div>
+                    <div class="cv-entry-subtitle">金融 &nbsp; 硕士 &nbsp; 经济学院</div>
+                    <div class="cv-entry-detail">相关课程：高级计量经济学、金融计量、金融衍生品、大数据与量化投资、高级公司金融</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internship -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">实习经历</h2>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2026年1月 — 2026年3月</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title">量化策略实习生 &nbsp; 金斧子基金销售有限公司，星荣事业群</div>
+                    <ul class="cv-items">
+                        <li><strong>基于L1行情数据开发日频Alpha因子</strong>，独立完成12篇因子周报，累计入库18个因子。工作流程覆盖"理论梳理-分布检验-回测验证-Fama-MacBeth增量检验-因子归因"全链条，单因子IC最高达5.48%。因子逻辑涵盖MPC等研报复现与优化，以及基于羊群效应、流动性风险溢价等微观结构理论的原创因子（如相对成本因子RCL、流动性短缺因子LS）。</li>
+                        <li><strong>为因子回测框架补充风险中性化模块</strong>，实现分桶离散去中心化与OLS/Ridge连续中性化两种方法，有效剥离行业、市值及特定风格暴露，提升因子开发效率与模型稳健性。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2025年7月 — 2025年9月</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title">量化策略实习生 &nbsp; 燧石资产管理有限公司，投研组</div>
+                    <ul class="cv-items">
+                        <li><strong>独立设计并迭代开发基于订单簿微观结构的Alpha因子</strong> (FZYB003系列)，通过刻画买卖双方在主动成交与高档位挂单中的不对称压力，生成交易信号；在创业板样本内回测 (2024.07–2025.07) 实现<strong>年化收益率 2.33%</strong>、<strong>夏普比率 2.41</strong>，60秒<strong>IC均值达 9.6%</strong>，且与现有因子库相关性低于 0.7，具备显著增量信息。</li>
+                        <li><strong>参与ETF底仓调仓优化项目</strong>，基于手工T0交易员提供的加/减仓票池 (Pool1/Pool2)，设计并实现"市值权重降序减仓"调仓逻辑，在控制跟踪误差 (TE ≈ 0.0028) 前提下，将手工T0<strong>年化收益率由 3.08% 提升至 4.63%</strong>(加仓4倍)；进一步测算极限调仓场景，验证在风险可控范围内可实现<strong> 6.18% 年化收益</strong>，为产品达标6%收益目标提供量化支撑。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">项目经历</h2>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2025年9月 — 2026年12月</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title">基于大模型与多目标强化学习的因子挖掘（毕业设计）</div>
+                    <ul class="cv-items">
+                        <li>提出<strong>融合大语言模型与多目标强化学习的因子挖掘框架</strong>，以解决传统强化学习方法面临的<strong>奖励稀疏</strong>和<strong>非平稳性</strong>的问题。</li>
+                        <li>利用DeepSeek-67B等开源大模型对现有因子库进行语义解析，将因子逻辑的语义表征融入强化学习<strong>状态空间</strong>，引导<strong>策略网络</strong>生成具备经济可解释性的公式化因子；采用<strong>RPN（逆波兰表示法）</strong>构建可执行的符号化因子，结合<strong>非法动作掩码</strong>与<strong>MaskablePPO</strong>保障语法合法性，并通过<strong>Ollama</strong>实现LLM的高效GPU卸载与推理。<strong>在全市场组合上，预测周期为20日时，因子IC > 10%</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competition -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">竞赛经历</h2>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2025年</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title">"良文杯"统计建模与AI预测挑战赛 — 金融大数据主题</div>
+                    <ul class="cv-items">
+                        <li><strong>主导构建基于LGBM的多因子预测模型</strong>，用于精准预测5只标的在未来5/10/20/40/60个tick后的涨跌情况。</li>
+                        <li><strong>核心技术与成果</strong>：设计并实现了包含价差与深度、挂单分布以及不平衡性在内的65个特征，IC最高达到9.95%，经过ICIR及相关性筛选后得到40个入模因子。采用<strong>LightGBM</strong>作为学习器，通过动态选择最优样本外阈值，显著提升了模型在不同预测周期下的泛化能力。模型在5/10/20/40/60 ticks样本外累计收益分别达到 42.26% / 51.65% / 44.27% / 27.98% / 23.51%。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-entry-date">2023年</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title">四川省大学生金融科技建模大赛</div>
+                    <ul class="cv-items">
+                        <li><strong>构建以业务价值为导向的三分类模型</strong>。基于脱敏用户画像与行为数据，以用户价值加权的WAUC为优化目标，精准识别高粘性客户（高频复购）。</li>
+                        <li>由数据清洗（缺失填补、低方差过滤）到特征工程（KMeans聚类衍生、WOE分箱），再到变量筛选（XGBoost + IV），最后进行多模型训练（XGBoost/LightGBM/CatBoost），完成端到端建模流程。单模型WAUC达 0.5788（LGBM），Stacking融合后提升至0.5799，显著优于基线。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cv-entry cv-entry-sm">
+                <div class="cv-entry-date">2023年</div>
+                <div class="cv-entry-content">
+                    <div class="cv-entry-title">第十四届全国大学生数学竞赛（一等奖）</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills - two column -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">工作技能</h2>
+            <div class="cv-skills-row">
+                <div class="cv-skills-col">
+                    <div class="cv-skill"><span class="cv-skill-label">编程语言：</span>Python（Pytorch/Stable-Baselines3）、熟悉Linux开发环境</div>
+                    <div class="cv-skill"><span class="cv-skill-label">软件使用：</span>MS、Wind、iFinD、Spss</div>
+                </div>
+                <div class="cv-skills-col">
+                    <div class="cv-skill"><span class="cv-skill-label">证书/执照：</span>基金从业资格证</div>
+                    <div class="cv-skill"><span class="cv-skill-label">外语水平：</span>英语（CET-4/6 : 520/480，雅思6.5）</div>
+                </div>
+            </div>
+        </section>
+
     </div>
-
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="cv">
-        <div class="container px-5">
-            <header>
-                <h2 id="cv-subtitle">Curriculum Vitae  |  赵英博</h2>
-            </header>
-            <div class="main-body" id="cv-md"></div>
-        </div>
-    </section>
 
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
