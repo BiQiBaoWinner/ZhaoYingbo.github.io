@@ -78,12 +78,13 @@
 }
 
 .cv-entry-date {
-    flex: 0 0 32mm;
+    flex: 0 0 38mm;
     font-size: 9pt;
     color: #666;
     padding-top: 1px;
     font-weight: 600;
     text-align: left;
+    white-space: nowrap;
 }
 
 .cv-entry-content {
