@@ -41,10 +41,11 @@
 <div class="home-tags">
   <span class="home-tag">量化投资</span>
   <span class="home-tag">因子挖掘</span>
+  <span class="home-tag">微观结构</span>
   <span class="home-tag">强化学习</span>
   <span class="home-tag">大语言模型</span>
-  <span class="home-tag">微观结构</span>
   <span class="home-tag">多目标优化</span>
+</div>
   <span class="home-tag">深度学习</span>
 </div>
 
