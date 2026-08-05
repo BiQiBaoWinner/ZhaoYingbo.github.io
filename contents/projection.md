@@ -1,99 +1,92 @@
-<div class="projection-nav">
-    <a href="#proj-2025-llm-rl"><span class="nav-year">2025</span><span class="nav-title">大模型+多目标强化学习因子挖掘</span></a>
+<div class="competition-nav">
+    <a href="#proj-2025-llm-rl"><span class="nav-year">2025</span><span class="nav-title">AlphaPareto：大模型+多目标强化学习因子挖掘</span></a>
     <a href="#proj-2023-chengdu"><span class="nav-year">2023</span><span class="nav-title">成都市投资分析报告（2022）</span></a>
 </div>
 
-<div id="proj-2025-llm-rl" class="projection-anchor"></div>
+<div id="proj-2025-llm-rl" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
-2025年11月 – 至今 <br>
-《基于大模型与多目标强化学习的因子挖掘研究》
+2025年9月 – 至今 <br>
+AlphaPareto：基于大模型与多目标强化学习的因子挖掘研究（毕业设计）
 </div>
 
-> 提出融合大语言模型与多目标强化学习的因子挖掘框架，以解决传统强化学习方法面临的奖励稀疏和非平稳性的问题。
-> 最终实验结果：样本外的全市场组合上，预测周期为20日时，因子IC > 10%
+本论文提出融合大语言模型语义感知与多目标强化学习的 **AlphaPareto** 因子挖掘框架，在中国A股市场进行实证研究，实验覆盖沪深300、中证800和全市场三个规模递增的股票池。
+
+**核心思路**：将因子挖掘建模为马尔可夫决策过程，利用 LLM 对演化中的因子库进行语义编码以应对非平稳性，并以多目标向量奖励（预测能力、时序稳定性、扰动鲁棒性、多样性）替代标量奖励，通过帕累托正则化实现多目标协同平衡。
 
 <div style="text-align:center;">
-    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/公式化因子挖掘任务对应的马尔可夫决策过程.png" alt="markov" style="width:45%; display:inline-block;">
-    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/三大模块.png" alt="三大模块" style="width:40%; display:inline-block;">
+    <img src="static/assets/img/alpha_pareto/overview.png" alt="AlphaPareto Overview" style="width:95%; display:inline-block;">
 </div>
 
-> __感知层__：利用Ollama部署DeepSeek‑14B等开源大模型，并以此对挖掘过程中的因子库进行语义解析，将因子逻辑的语义表征融入强化学习状态空间，引导策略网络生成具备经济可解释性的公式化因子；
+#### 主对比实验结果
+
+在 CSI300、CSI800 和全市场（Market）三个数据集上的样本外 IC 表现：
+
+| Method | CSI300 Mean | CSI300 Std | CSI800 Mean | CSI800 Std | Market Mean | Market Std |
+|---|---|---|---|---|---|---|
+| Alpha158 | 2.99% | — | 4.77% | — | 4.04% | — |
+| MLP | 1.51% | (2.33%) | 4.63% | (0.90%) | 7.00% | (0.18%) |
+| GP | 1.09% | (0.82%) | 2.74% | (1.40%) | 7.52% | (1.53%) |
+| AlphaAgent | 0.51% | (0.34%) | 0.48% | (0.46%) | 1.10% | (0.59%) |
+| R&D-Agent-Quant | 2.39% | (0.96%) | 2.45% | (0.73%) | 1.48% | (0.91%) |
+| AlphaGen | 3.69% | (0.66%) | 5.07% | (0.63%) | 8.44% | (1.09%) |
+| AlphaQCM | 0.50% | (0.95%) | 4.79% | (0.34%) | 9.16% | (4.22%) |
+| AlphaForge | 2.03% | (0.65%) | 4.17% | (1.96%) | 5.37% | (1.81%) |
+| **AlphaPareto** | **3.92%** | **(0.46%)** | **5.70%** | **(0.87%)** | **10.10%** | **(1.01%)** |
+
+**AlphaPareto 在所有三个数据集上均取得最优 IC**，在全市场上相对最强基线的增益达 0.94%。随着股票池规模增大、市场复杂度上升，优势更加显著。
+
+#### 多维度评估
+
+除了预测能力，AlphaPareto 在时间稳定性（RRE）、扰动鲁棒性（PFS）和多样性（DH）三个维度也表现强劲：
 
 <div style="text-align:center;">
-    <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/融入大语言模型解析结果的感知层.png" alt="markov" style="width:55%; display:inline-block;">
+    <img src="static/assets/img/alpha_pareto/radar_plot.png" alt="雷达图" style="width:70%; display:inline-block;">
 </div>
 
-> __决策层&演化层__：引入 PPS（预测能力）、RRE（分布稳定性）、PFS（抗波动性）、DH（因子多样性） ，并借助Pareto优化得到Agent的奖励；对于因子构建和因子库维护，我们采用RPN（逆波兰表示法）构建可执行的符号化因子，结合非法动作掩码与MaskablePPO保障语法合法性，并在归档时从预测能力和增量信息两方面进行过滤。
-> **Pareto优化**：给定奖励向量 $r_j \in \mathbb{R}^d$，优化 $\lambda \ge 0$：
->
-> $$
-> g(\lambda) = -\log\left(\frac{1}{B}\sum_{j=1}^{B} \exp(\lambda^\top r_j)\right) + \lambda^\top c
-> $$
->
-> - $B$：样本数量
-> - $c$：每维奖励的分位数阈值
-> - 约束实现：$\lambda=\mathrm{softplus}(\tau)$ 保证 $\lambda\ge 0$
+#### 消融实验
 
-<div align="center">
-    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #ffffffa2;">
-        <thead>
-            <tr>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">维度</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">含义</th>
-            <th style="border: 1px solid #ddd; padding: 12px; text-align: center;">公式定义</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">PPS(IC)</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">预测能力（截面 IC 的时间均值）</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$$\mathrm{PPS}=\mathrm{mean}_t(\mathrm{IC}_t)$$</td>
-            </tr>
-            <tr>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">RRE</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">排名稳定性（相邻期秩分布 KL 距离的稳定度）</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$$\mathrm{RRE}=\mathrm{mean}_t\left(\frac{1}{1+\mathrm{KL}(p_t\|p_{t-1})}\right)$$</td>
-            </tr>
-            <tr>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">PFS</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">扰动鲁棒性（原始与噪声扰动相关性均值）</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$$\mathrm{PFS}=\mathrm{mean}_t(\rho(\text{orig},\text{noisy}))$$</td>
-            </tr>
-            <tr>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">DH</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">多样性（协方差谱熵归一化）</td>
-            <td style="border: 1px solid #ddd; padding: 10px; text-align: center;">$$\mathrm{DH}=\frac{-\sum_i p_i\log p_i}{\log n},\quad p_i=\frac{\lambda_i}{\sum_k\lambda_k}$$</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+| LLM | MORL | CSI300 | CSI800 | Market |
+|---|---|---|---|---|
+| | | 3.69% (0.66%) | 5.07% (0.63%) | 8.44% (1.09%) |
+| ✓ | | 2.37% (0.68%) | 5.04% (0.42%) | 9.68% (0.83%) |
+| | ✓ | **3.99%** (1.27%) | 5.54% (1.03%) | 9.63% (0.80%) |
+| ✓ | ✓ | 3.92% (0.46%) | **5.70%** (0.87%) | **10.10%** (1.01%) |
 
-#### 沪深300&中证800实验结果:
+两个模块互补：LLM 语义编码在复杂市场中贡献更显著，多目标优化在所有市场中均稳定有效。
+
+#### LLM 规模敏感性
+
+AlphaPareto 在广泛参数尺度下均表现强劲，但性能呈 **非单调特征**——4B 参数的 Qwen-Embedding-4B 在三个数据集上均取得最优 IC，过大模型反而引入噪声。
+
+#### 投资组合回测
+
+在全市场环境下月度调仓，选前50只股票等权做多，双边交易成本 15BP：
+
+| 模型 | 年化收益 | 最大回撤 | 信息比率 | 夏普比率 |
+|---|---|---|---|---|
+| Alpha158 | 33.17% | -18.71% | 1.08 | 1.34 |
+| AlphaGen | 40.03% | -15.91% | 1.65 | 1.61 |
+| **AlphaPareto** | **58.92%** | **-18.12%** | **2.62** | **2.59** |
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi300.png" alt="csi300" style="width:120%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/csi800.png" alt="csi800" style="width:120%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/alphapareto/all.png" alt="all" style="width:120%; display:inline-block;">
+    <img src="static/assets/img/alpha_pareto/cum_ret_mkt_backtests50_drop5_dailyLog_monthlyChange.png" alt="累计收益率" style="width:90%; display:inline-block;">
 </div>
 
-> 本项目成功将强化学习算法应用于中国A股市场的量化投资策略构建，实验结果表明：
->
->> * 强化学习模型在IC指标上显著优于传统线性模型，且本项目在AlphaGen的基础上引入了LLM的解析能力和多目标Pareto优化，在各规模票池上都获得更好的表现；
->> * 模型具有良好的泛化能力和自适应能力，在不同样本规模和步进比例下表现稳定; 
->> * 挖掘过程中的（基于与现存因子的相关性）过滤机制以及多目标（因子多样性指标DH）Pareto优化，有效避免了单一因子依赖，提高了策略的稳健性. 
->>
+> AlphaPareto 在年化收益率、信息比率和夏普比率上均排名第一，验证了多目标因子挖掘在实际投资组合构建中的经济价值。
 
-<div id="proj-2023-chengdu" class="projection-anchor"></div>
+---
+
+<div id="proj-2023-chengdu" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2023年6月 – 2023年8月 <br>
 《成都市投资分析报告（2022）》
 </div>
 
-> 报告以2022年统计数据为基础，以成都市历年数据以及全国、四川省、国家中心城市、副省级城市、中西部主要城市等可比性统计数据为参照，选取相应指标，从不同维度对成都市的投资情况进行综合分析和评价。收集整理可比性统计数据，建立评分模型对成都市现代服务业的投资发展情况展开综合分析，并完成该部分报告撰写，最终报告以成都发展改革白皮书印发。
+报告以 2022 年统计数据为基础，以成都市历年数据以及全国、四川省、国家中心城市、副省级城市、中西部主要城市等可比性统计数据为参照，选取相应指标，从不同维度对成都市的投资情况进行综合分析和评价。主要负责收集整理可比性统计数据，建立评分模型对成都市现代服务业的投资发展情况展开综合分析，并完成该部分报告撰写，最终报告以成都发展改革白皮书印发。
 
-> 左表考虑了城镇化率、城镇居民家庭人均可支配收入、年末金融机构贷款余额等维度的金融业综合评分对比；右边为考虑了社会消费品零售总额、公路/铁路/航运货运量等维度的现代物流业综合评分对比。
+左图考虑了城镇化率、城镇居民家庭人均可支配收入、年末金融机构贷款余额等维度的金融业综合评分对比；右图为考虑了社会消费品零售总额、公路/铁路/航运货运量等维度的现代物流业综合评分对比。
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/成都市投资发展-金融业.png" alt="金融业" style="width:50%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/成都市投资发展-现代物流业.png" alt="现代物流业" style="width:40%; display:inline-block;">
+  <img src="static/assets/img/成都市投资发展-金融业.png" alt="金融业" style="width:46%; display:inline-block;">
+  <img src="static/assets/img/成都市投资发展-现代物流业.png" alt="现代物流业" style="width:46%; display:inline-block;">
 </div>

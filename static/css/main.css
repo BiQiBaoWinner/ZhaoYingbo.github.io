@@ -78,13 +78,15 @@
     background: var(--bg-section-alt) !important;
 }
 
-[data-theme="dark"] .competition-nav a {
+[data-theme="dark"] .competition-nav a,
+[data-theme="dark"] .experience-nav a {
     background: var(--card-bg);
     border-color: var(--border-color);
     color: var(--text-primary);
 }
 
-[data-theme="dark"] .competition-nav a:hover {
+[data-theme="dark"] .competition-nav a:hover,
+.experience-nav a:hover {
     background: var(--hover-bg);
     border-color: var(--h-title-color);
 }
@@ -273,13 +275,15 @@ section .main-body div[style*="text-align:center"] img {
 }
 
 /* ===== Competition Navigation Cards ===== */
-.competition-nav {
+.competition-nav,
+.experience-nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 12px;
     margin: 20px 0 30px;
 }
-.competition-nav a {
+.competition-nav a,
+.experience-nav a {
     display: flex;
     flex-direction: column;
     padding: 16px 20px;
@@ -290,26 +294,30 @@ section .main-body div[style*="text-align:center"] img {
     color: var(--text-primary);
     transition: all 0.2s;
 }
-.competition-nav a:hover {
+.competition-nav a:hover,
+.experience-nav a:hover {
     border-color: var(--h-title-color);
     background: var(--hover-bg);
     transform: translateY(-1px);
     box-shadow: var(--card-shadow);
 }
-.competition-nav .nav-year {
+.competition-nav .nav-year,
+.experience-nav .nav-year {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--h-title-color);
     margin-bottom: 4px;
     letter-spacing: 0.05em;
 }
-.competition-nav .nav-title {
+.competition-nav .nav-title,
+.experience-nav .nav-title {
     font-size: 0.95rem;
     font-weight: 500;
     line-height: 1.4;
 }
 
-.competition-anchor { scroll-margin-top: 90px; }
+.competition-anchor,
+.experience-anchor { scroll-margin-top: 90px; }
 
 /* Tables side by side in competition */
 .competition-tables {
@@ -329,7 +337,8 @@ section .main-body div[style*="text-align:center"] img {
 }
 
 @media screen and (max-width: 768px) {
-    .competition-nav {
+    .competition-nav,
+    .experience-nav {
         grid-template-columns: 1fr;
     }
     .competition-tables {

@@ -116,8 +116,8 @@
                 <div class="cv-entry-content">
                     <div class="cv-entry-title">基于大模型与多目标强化学习的因子挖掘（毕业设计）</div>
                     <ul class="cv-items">
-                        <li>提出<strong>融合大语言模型与多目标强化学习的因子挖掘框架</strong>，以解决传统强化学习方法面临的<strong>奖励稀疏</strong>和<strong>非平稳性</strong>的问题。</li>
-                        <li>利用DeepSeek-67B等开源大模型对现有因子库进行语义解析，将因子逻辑的语义表征融入强化学习<strong>状态空间</strong>，引导<strong>策略网络</strong>生成具备经济可解释性的公式化因子；采用<strong>RPN（逆波兰表示法）</strong>构建可执行的符号化因子，结合<strong>非法动作掩码</strong>与<strong>MaskablePPO</strong>保障语法合法性，并通过<strong>Ollama</strong>实现LLM的高效GPU卸载与推理。<strong>在全市场组合上，预测周期为20日时，因子IC > 10%</strong></li>
+                        <li>提出<strong>融合大语言模型与多目标强化学习的因子挖掘框架（AlphaPareto）</strong>，以解决传统强化学习方法面临的<strong>奖励稀疏</strong>和<strong>非平稳性</strong>的问题。在中国A股市场三个规模递增的股票池上（沪深300/中证800/全市场），样本外IC分别达到 3.92\% / 5.70\% / 10.10\%，均超越所有基线方法。</li>
+                        <li>利用LLM对演化中的因子库进行语义编码，引入多目标向量奖励（预测能力PPS、时序稳定性RRE、扰动鲁棒性PFS、多样性DH），通过帕累托正则化实现多目标协同平衡。消融实验验证两个模块的互补效应。月度调仓投资组合<strong>年化收益率 58.92\%</strong>、<strong>夏普比率 2.59</strong>、信息比率 2.62，在所有评估方法中排名第一。</li>
                     </ul>
                 </div>
             </div>

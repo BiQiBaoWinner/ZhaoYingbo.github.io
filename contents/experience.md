@@ -1,17 +1,24 @@
+<div class="experience-nav">
+  <a href="#exp-jfz"><span class="nav-title">金斧子基金</span><span class="nav-year">2026.1 – 2026.3</span></a>
+  <a href="#exp-suishi"><span class="nav-title">燧石资产</span><span class="nav-year">2025.7 – 2025.9</span></a>
+  <a href="#exp-dwzq"><span class="nav-title">东吴证券</span><span class="nav-year">2023.11 – 2024.3</span></a>
+</div>
+
+<div id="exp-jfz" class="experience-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 金斧子基金销售有限公司  |  星荣事业群  -  量化策略实习生  |  2026.1 - 2026.3
 </div>
-独立完成A股高频微观结构日频因子研究，围绕盘口供给、价格推动、流动性摩擦、开盘定价效率与交易集中度构建 50+ 因子框架，形成Minute_logvol_skew、Minute_MPC5_max_v2、tick_LS_99、tick_VD15m等多条稳定Alpha主线，着重关注因子的金融学逻辑以及对隔日的截面Alpha捕捉能力。完善因子检验框架，补充“ 因子风格分解模块 ”+“ FamaMacBeth增量Alpha检验模块 ”。
+独立完成A股高频微观结构日频因子研究，围绕盘口供给、价格推动、流动性摩擦、开盘定价效率与交易集中度构建 50+ 因子框架，形成Minute_logvol_skew、Minute_MPC5_max_v2、tick_LS_99、tick_VD15m等多条稳定Alpha主线，着重关注因子的金融学逻辑以及对隔日的截面Alpha捕捉能力。完善因子检验框架，补充" 因子风格分解模块 "+" FamaMacBeth增量Alpha检验模块 "。
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/Minute_logvol_skew_groups_5_20260228_175346.png" alt="Minute_logvol_skew" style="width:40%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/Minute_MPC5_max_v2_groups_5_20260126_111944.png" alt="Minute_MPC5_max_v2" style="width:40%; display:inline-block;">
+  <img src="static/assets/img/jfz/Minute_logvol_skew_groups_5_20260228_175346.png" alt="Minute_logvol_skew" style="width:40%; display:inline-block;">
+  <img src="static/assets/img/jfz/Minute_MPC5_max_v2_groups_5_20260126_111944.png" alt="Minute_MPC5_max_v2" style="width:40%; display:inline-block;">
 
 </div>
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/tick_LS_99_groups_5_20260212_134322.png" alt="LS_99" style="width:40%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/jfz/tick_VD15m_groups_5_20260319_135954.png" alt="tick_VD15m" style="width:40%; display:inline-block;">
+  <img src="static/assets/img/jfz/tick_LS_99_groups_5_20260212_134322.png" alt="LS_99" style="width:40%; display:inline-block;">
+  <img src="static/assets/img/jfz/tick_VD15m_groups_5_20260319_135954.png" alt="tick_VD15m" style="width:40%; display:inline-block;">
 </div>
 
 #### 工作内容：
@@ -33,30 +40,29 @@
 
 ---
 
+<div id="exp-suishi" class="experience-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 燧石资产管理有限公司  |  投研组  -  量化策略实习生  |  2025.7 – 2025.9 
 </div>
 负责1sTick股票高频因子的挖掘与检验，专注于因子的金融学逻辑和回测表现。参与ETF底仓调优项目，优化产品票池结构，在风险承受范围内最大限度提升产品收益。
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:30%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001ic_avg.png" alt="IC表现" style="width:30%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001_pnl_plot_45_3.png" alt="产品表现" style="width:30%; display:inline-block;">
+  <img src="static/assets/img/FZYB003001levels.png" alt="分层表现" style="width:30%; display:inline-block;">
+  <img src="static/assets/img/FZYB003001ic_avg.png" alt="IC表现" style="width:30%; display:inline-block;">
+  <img src="static/assets/img/FZYB003001_pnl_plot_45_3.png" alt="产品表现" style="width:30%; display:inline-block;">
 </div>
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001_S.CN.SZSE.000504.png" alt="涨停表现" style="width:30%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001_S.CN.SZSE.000906.png" alt="震荡表现" style="width:30%; display:inline-block;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/FZYB003001_S.CN.SZSE.301589.png" alt="跌停表现" style="width:30%; display:inline-block;">
+  <img src="static/assets/img/FZYB003001_S.CN.SZSE.000504.png" alt="涨停表现" style="width:30%; display:inline-block;">
+  <img src="static/assets/img/FZYB003001_S.CN.SZSE.000906.png" alt="震荡表现" style="width:30%; display:inline-block;">
+  <img src="static/assets/img/FZYB003001_S.CN.SZSE.301589.png" alt="跌停表现" style="width:30%; display:inline-block;">
 </div>
 
 #### 工作内容:
 
 - 独立设计并迭代开发基于**订单簿微观结构的Alpha因子**，通过刻画买卖双方在主动成交与高档位挂单中的不对称压力，构建具有前瞻性的多空信号；
 - 因子在**创业板样本**内回测 (2024.07–2025.07) 实现**年化收益率 2.33\%**、**夏普比率 2.41**，且与现有因子库相关性低于 0.7，具备显著增量信息。
-- 基于手工T0交易员提供的加/减仓票池 (Pool1/Pool2)，设计并实现“**市值权重降序减仓**”调仓逻辑，在控制跟踪误差 (TE ≈ 0.0028) 前提下，将产品**年化收益率由 3.08\% 提升至 4.63\%**(加仓4倍)；进一步测算极限调仓场景，验证在风险可控范围内可实现 6.18\% 年化收益，为产品达标6\%收益目标提供量化支撑。
-
-<!-- ===== 策略回测表格开始 ===== -->
+- 基于手工T0交易员提供的加/减仓票池 (Pool1/Pool2)，设计并实现"**市值权重降序减仓**"调仓逻辑，在控制跟踪误差 (TE ≈ 0.0028) 前提下，将产品**年化收益率由 3.08\% 提升至 4.63\%**(加仓4倍)；进一步测算极限调仓场景，验证在风险可控范围内可实现 6.18% 年化收益，为产品达标6\%收益目标提供量化支撑。
 
 <div style="width:100%;overflow-x:auto;margin:25px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 <table style="border-collapse:collapse;font-size:0.8em;min-width:900px;width:100%;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:6px;overflow:hidden;background:#fff">
@@ -94,10 +100,10 @@
 </tbody>
 </table>
 </div>
-<!-- ===== 策略回测表格结束 ===== -->
 
 ---
 
+<div id="exp-dwzq" class="experience-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 东吴证券股份有限公司 | 研究所食饮组  -  实习分析师  |  2023.11 – 2024.3
 </div>
