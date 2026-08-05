@@ -356,3 +356,26 @@ section .main-body a:hover {
 html { scroll-behavior: auto !important; }
 .mt5 { margin-top: 3rem !important; }
 .md5 { padding-top: 2rem; padding-bottom: 3rem; }
+
+/* ===== Home Page Research Tags ===== */
+.home-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0.6rem;
+}
+.home-tag {
+    display: inline-block;
+    padding: 6px 18px;
+    background: var(--tag-bg);
+    color: var(--h-title-color);
+    border: 1px solid var(--h-title-color);
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.home-tag:hover {
+    background: var(--h-title-color);
+    color: #ffffff;
+}
