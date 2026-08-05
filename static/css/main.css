@@ -183,47 +183,58 @@ section .main-body h3 { font-size: 1.2rem; margin-top: 1.5rem; }
 section .main-body h4 { font-size: 1.1rem; margin-top: 1.2rem; }
 section .main-body p { margin-bottom: 0.8rem; }
 
-/* ===== Tables ===== */
+/* ===== Tables (Three-line academic style) ===== */
 section .main-body table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background: var(--card-bg);
-    box-shadow: var(--card-shadow);
-    border-radius: 6px;
-    overflow: hidden;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+}
+section .main-body table thead {
+    border-top: 2pt solid var(--text-primary);
+    border-bottom: 0.8pt solid var(--text-primary);
+}
+section .main-body table thead th {
+    background: none;
+    color: var(--text-primary);
+    text-align: center;
+    padding: 6px 10px 4px;
+    border: none;
+    font-weight: 700;
     font-size: 0.88rem;
 }
-section .main-body table th {
-    background: var(--table-header-bg);
-    color: #fff;
-    text-align: center;
-    padding: 10px 12px;
-    border: 1px solid var(--table-border);
-    font-weight: 600;
+section .main-body table tbody {
+    border-bottom: 2pt solid var(--text-primary);
 }
 section .main-body table td {
-    padding: 8px 12px;
-    border: 1px solid var(--table-border);
+    padding: 5px 10px;
+    border: none;
     text-align: center;
     vertical-align: middle;
     color: var(--text-primary);
+    background: none;
 }
-section .main-body table tr:nth-child(even) {
-    background: var(--table-stripe);
-}
-section .main-body table tr:nth-child(odd) {
-    background: var(--card-bg);
+section .main-body table tr {
+    background: none !important;
 }
 
-/* Responsive table wrapper */
+/* Column rule separators (like cmidrule) */
+section .main-body table .colsep {
+    border-left: 0.4pt solid var(--border-color);
+}
+
 @media screen and (max-width: 768px) {
     section .main-body table {
-        font-size: 0.75rem;
+        font-size: 0.78rem;
     }
-    section .main-body table th,
+    section .main-body table thead th,
     section .main-body table td {
-        padding: 6px 8px;
+        padding: 4px 6px;
     }
 }
 
@@ -344,6 +355,14 @@ section .main-body div[style*="text-align:center"] img {
     .competition-tables {
         grid-template-columns: 1fr;
     }
+}
+
+[data-theme="dark"] section .main-body table thead {
+    border-top-color: #888;
+    border-bottom-color: #888;
+}
+[data-theme="dark"] section .main-body table tbody {
+    border-bottom-color: #888;
 }
 
 /* ===== Style blockquote-like headers in content ===== */
