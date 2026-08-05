@@ -1,20 +1,10 @@
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
-<style>
-    /* 全局表格样式 - 确保所有表格内容居中 */
-    table td, table th {
-        text-align: center !important;
-        vertical-align: middle !important;
-    }
-</style>
-
 <div class="competition-nav">
-  <a href="#comp-2025"><span class="nav-year">2025</span><span class="nav-title">良文杯统计建模与AI预测挑战赛</span></a>
+  <a href="#comp-2025"><span class="nav-year">2025</span><span class="nav-title">第一届"良文杯"统计建模与AI预测挑战赛</span></a>
   <a href="#comp-2023"><span class="nav-year">2023</span><span class="nav-title">四川省金融科技建模大赛</span></a>
-  <a href="#comp-2022-mcm"><span class="nav-year">2022</span><span class="nav-title">MCM/ICM 森林管理决策模型</span></a>
-  <a href="#comp-2022-mathor"><span class="nav-year">2022</span><span class="nav-title">MathorCup 基站站址优化</span></a>
-  <a href="#comp-2022-apmcm"><span class="nav-year">2022</span><span class="nav-title">APMCM 气温预测建模</span></a>
-  <a href="#comp-2022-inn"><span class="nav-year">2022</span><span class="nav-title">创新创业训练计划（省级）</span></a>
+  <a href="#comp-2022-mcm"><span class="nav-year">2022</span><span class="nav-title">MCM/ICM 森林碳汇管理决策模型</span></a>
+  <a href="#comp-2022-mathor"><span class="nav-year">2022</span><span class="nav-title">MathorCup 5G基站站址优化</span></a>
+  <a href="#comp-2022-apmcm"><span class="nav-year">2022</span><span class="nav-title">APMCM 全球气温预测建模</span></a>
+  <a href="#comp-2022-inn"><span class="nav-year">2022</span><span class="nav-title">大创：NLP投资者情绪与股利政策</span></a>
 </div>
 
 <div id="comp-2025" class="competition-anchor"></div>
@@ -23,11 +13,11 @@
 第一届"良文杯"统计建模与AI预测挑战赛（金融大数据主题）
 </div>
 
-* 主导构建基于LGBM 的多因子预测模型，用于精准预测5 只标的在未来5 / 10 / 20 / 40 / 60个tick后的涨跌情况。
-* 核心技术与成果：设计并实现了包含价差与深度、挂单分布以及不平衡性在内的65个特征，IC最高达到9.95%，经过ICIR及相关性筛选后得到40个入模因子。采用LightGBM作为学习器，通过动态选择最优样本外阈值，显著提升了模型在不同预测周期下的泛化能力。模型在5 / 10 / 20 / 40 / 60 ticks样本外累计收益分别达到42.26% / 51.65% / 44.27% / 27.98% / 23.51%。
+* 主导构建基于 LGBM 的多因子预测模型，用于精准预测 5 只标的在未来 5/10/20/40/60 个 tick 后的涨跌情况。
+* 核心技术与成果：设计并实现了包含价差与深度、挂单分布以及不平衡性在内的 65 个特征，IC 最高达到 9.95%，经过 ICIR 及相关性筛选后得到 40 个入模因子。采用 LightGBM 作为学习器，通过动态选择最优样本外阈值，显著提升了模型在不同预测周期下的泛化能力。模型在 5/10/20/40/60 ticks 样本外累计收益分别达到 42.26% / 51.65% / 44.27% / 27.98% / 23.51%。
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/lwcup.png" alt="LWCUP" style="width:80%; display:inline-block;">
+  <img src="static/assets/img/lwcup.png" alt="LWCUP" style="width:80%; display:inline-block;">
 </div>
 
 <div id="comp-2023" class="competition-anchor"></div>
@@ -36,39 +26,42 @@
 四川省大学生金融科技建模大赛
 </div>
 
-* 构建以业务价值为导向的三分类模型。基于脱敏用户画像与行为数据，以用户价值加权的WAUC 为优化目标，精准识别高粘性客户（高频复购）。
-* 由数据清洗（缺失填补、低方差过滤）到特征工程（KMeans 聚类衍生、WOE 分箱），再到变量筛选（XGBoost + IV），最后进行多模型训练（XGBoost/LightGBM/CatBoost），完成端到端建模流程。单模型WAUC 达0.5788（LGBM），Stacking 融合后提升至0.5799，显著优于基线。
+* 构建以业务价值为导向的三分类模型。基于脱敏用户画像与行为数据，以用户价值加权的 WAUC 为优化目标，精准识别高粘性客户（高频复购）。
+* 由数据清洗（缺失填补、低方差过滤）到特征工程（KMeans 聚类衍生、WOE 分箱），再到变量筛选（XGBoost + IV），最后进行多模型训练（XGBoost / LightGBM / CatBoost），完成端到端建模流程。单模型 WAUC 达 0.5788（LGBM），Stacking 融合后提升至 0.5799，显著优于基线。
 
 <div style="text-align:center;">
-  <img src="/zhaoyingbo.github.io/static/assets/img/fintech.png" alt="金融科技" style="width:80%; display:inline-block;">
+  <img src="static/assets/img/fintech.png" alt="金融科技" style="width:80%; display:inline-block;">
 </div>
 
-注：AX/BX/CX为新网银行提供的客户脱敏数据，'_Max'/'_Range'/'_mul'/'_Mode'为特征工程中所使用的操作符。
+注：AX/BX/CX 为新网银行提供的客户脱敏数据，'_Max'/'_Range'/'_mul'/'_Mode' 为特征工程中所使用的操作符。
 
 <div id="comp-2022-mcm" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
-美国大学生数学建模竞赛（MCM/ICM）<br>
-《Decision-making model for forest management plans based on Principal Component Analysis and MultipleRegression Analysis》
+美国大学生数学建模竞赛（MCM/ICM）— Honorable Mention <br>
+《Decision-making model for forest management plans based on PCA and Multiple Regression Analysis》
 </div>
 
-* **主导构建"森林碳汇与管理决策"综合模型**，从全球气候变化背景出发，将复杂的生态、经济与社会因素（如树种生物量、林产品产量、人口及旅游发展）进行量化整合。
-* 整理相关文献，根据生物量膨胀系数法计算得到树种的生物量和碳储量，以此借助PCA算法对14种主要树种的碳储量数据进行降维，建立综合指标对碳储量进行代理后进行多元回归分析，成功构建了一个能预测碳储量并指导最优管理决策的模型，最终模型R²高达0.8031，验证了其强大的解释力；除此之外，在修正模型中还考虑到了人口特征以及旅游发展特征。
+本论文围绕全球气候变化背景下的森林碳汇管理问题展开研究，建立了两阶段的森林管理决策模型。
 
-关键指标度量：
-* 碳汇公式如下：
+* **Integrated Model I（碳汇估算模型）**：随机抽样全球四种温度带的 14 种优势树种，基于生物量膨胀因子法（BEF）间接计算各树种的碳储量。对林木碳汇和四种主要林产品（2011–2020 全球产量）分别进行主成分分析（PCA），各提取 2 个主成分，再通过多元回归分析构建综合碳汇预测模型，用于计算不同地区森林的碳储量。
 
+* **Integrated Model II（管理决策模型）**：在 Model I 基础上引入人口变量和旅游发展水平，修正得到可用于森林最优管理决策的综合模型。模型揭示了森林采伐对碳固存的贡献存在"转折点"——特定条件下采伐成熟林木加工为木制品可实现更大碳固存。
+
+* **模型表现**：最终回归模型 **R² = 0.8031**，验证了强大的解释力。此外发现偏导数在特定森林数据下显著非零，表明存在使碳储量保持正增长而不进行采伐的条件。
+
+关键碳汇公式：
 $$
 CS_t = CS_{\text{trees}} + CS_{\text{forestry-products}} = (1 - \lambda)^t \sum_{i=1}^2 \Phi_i X_i + (1 + \mu)^t \sum_{i=1}^2 \varphi_i Y_i
 $$
 
-  * $X_1$ 和 $X_2$ 为林木碳汇的中间变量，分别表示不同系数加权下的林木碳汇总量, 其计算公式如下：
+  * $X_1$、$X_2$：PCA 提取的林木碳汇主成分，公式如下：
 
 $$
 X_1 = \sum_{j=1}^{14} b_{j1} \cdot CS_j, \quad X_2 = \sum_{j=1}^{14} b_{j2} \cdot CS_j
 $$
 
-  * $Y_1$ 和 $Y_2$ 为林产品碳汇的中间变量，分别表示不同系数加权下的林产品碳汇总量, 其计算公式如下：
+  * $Y_1$、$Y_2$：林产品碳汇主成分，公式如下：
 
 $$
 Y_1 = \sum_{k=1}^{4} c_{k1} \cdot Quantity_k, \quad Y_2 = \sum_{k=1}^{4} c_{k2} \cdot Quantity_k
@@ -77,21 +70,21 @@ $$
 <div id="comp-2022-mathor" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
-MathorCup 数学建模竞赛 <br>
-《基于K-Means聚类分析的基站站址及类型选择优化模型》
+MathorCup 数学建模竞赛 — 二等奖 <br>
+《基于 K-Means 聚类分析的 5G 基站站址及类型选择优化模型》
 </div>
 
-在本项目中，我们针对5G通信网络规划中的基站选址问题，建立站址及种类选择优化模型，在满足覆盖率要求的前提下，实现成本最优的基站部署方案。
+针对 5G 通信网络规划中的基站选址问题，建立站址及种类选择优化模型，在满足 90% 弱覆盖点覆盖率要求的前提下，实现成本最优的基站部署方案。问题空间为 2500×2500 的网格，共 22 个基站点位候选。
 
-- **K-Means聚类**：将弱覆盖区域划分为5个片区，实现分批治理
-- **层次分析法（AHP）**：对各片区业务权重进行一致性检验
-- **递归选址算法**：优先选择业务量最大点建站，逐步清点已覆盖区域
+- **K-Means 聚类**：将弱覆盖区域划分为 5 个片区，实现分批治理
+- **层次分析法（AHP）**：对各片区业务量权重进行一致性检验
+- **递归选址算法**：优先选择业务量最大点位建站，逐步清点已覆盖区域，每次新增站点时重新规划
 - **类扇形覆盖修正**：引入旋转角度 β 优化三扇区实际覆盖范围
-- **聚类方法对比**：系统聚类、DBSCAN、K-Means 多维指标评估
+- **聚类方法对比**：系统聚类、K-Means、DBSCAN 的多维指标全面评估
 
-  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
-    <tr style="background: #f5f5f5;">
-      <th style="border: 1px solid #ddd; padding: 12px;">公式</th>
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
+      <th style="border: 1px solid #ddd; padding: 12px;">公式名称</th>
       <th style="border: 1px solid #ddd; padding: 12px;">表达式</th>
     </tr>
     <tr>
@@ -103,72 +96,65 @@ MathorCup 数学建模竞赛 <br>
       <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle \eta = \frac{traffic(X^m)}{traffic(X^M)}$</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">基站类型选择函数</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle \phi = \frac{\Delta\gamma}{\gamma(X^m)} - \eta$</td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">辐射圈业务量计算</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle traffic(\mathcal{C}_j^i) = \sum_{(x-x_j^i)^2+(y-y_j^i)^2 \leq r^2} traffic(x,y)$</td>
-    </tr>
-    <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">最优旋转角度</td>
       <td style="border: 1px solid #ddd; padding: 10px;">$\displaystyle \beta^{*} = \arg\max_{\beta_n} \{ traffic(\mathcal{R}_j^i, \beta_n) \}$</td>
     </tr>
   </table>
-  注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
+
+注：$\mathcal{C}_j^i$ 表示以 $Q_j^i$ 为圆心的圆形辐射区域，$\mathcal{R}_j^i$ 表示修正后的三扇区覆盖区域。
 
 <div class="competition-tables">
   <div class="competition-table">
     <div class="competition-table-title">主要结果</div>
-    <table style="width: 100%; border-collapse: collapse; margin: 0; background: #fff;">
-      <tr style="background: #f5f5f5;">
+    <table style="width: 100%; border-collapse: collapse; margin: 0;">
+      <tr>
         <th style="border: 1px solid #ddd; padding: 12px;">成果指标</th>
         <th style="border: 1px solid #ddd; padding: 12px;">数值</th>
       </tr>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 10px;">弱覆盖点业务量覆盖率</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">弱覆盖点业务量覆盖率（圆形覆盖）</td>
         <td style="border: 1px solid #ddd; padding: 10px;"><strong>92.88%</strong></td>
       </tr>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 10px;">最优旋转角度覆盖率</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">弱覆盖点业务量覆盖率（三扇区修正）</td>
         <td style="border: 1px solid #ddd; padding: 10px;"><strong>75.26%</strong></td>
       </tr>
       <tr>
         <td style="border: 1px solid #ddd; padding: 10px;">模型稳定性检验覆盖率范围</td>
-        <td style="border: 1px solid #ddd; padding: 10px;">89%–93%</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">89% – 93%</td>
       </tr>
     </table>
   </div>
 
   <div class="competition-table">
     <div class="competition-table-title">聚类方法对比</div>
-    <table style="width: 100%; border-collapse: collapse; margin: 0; background: #fff;">
-      <tr style="background: #f5f5f5;">
+    <table style="width: 100%; border-collapse: collapse; margin: 0;">
+      <tr>
         <th style="border: 1px solid #ddd; padding: 12px;">评价指标</th>
         <th style="border: 1px solid #ddd; padding: 12px;">系统聚类</th>
         <th style="border: 1px solid #ddd; padding: 12px;">K-Means</th>
         <th style="border: 1px solid #ddd; padding: 12px;">DBSCAN</th>
       </tr>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 10px;">紧密度</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">紧密度 (Compactness)</td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.52</td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.34</td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.29</td>
       </tr>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 10px;">分割度</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">分割度 (Separation)</td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.55</td>
         <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.85</strong></td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.82</td>
       </tr>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 10px;">戴维森堡丁指数</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">戴维森堡丁指数 (DBI)</td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.67</td>
         <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.23</strong></td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.44</td>
       </tr>
       <tr>
-        <td style="border: 1px solid #ddd; padding: 10px;">邓恩指数</td>
+        <td style="border: 1px solid #ddd; padding: 10px;">邓恩指数 (Dunn Index)</td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.23</td>
         <td style="border: 1px solid #ddd; padding: 10px;"><strong>0.91</strong></td>
         <td style="border: 1px solid #ddd; padding: 10px;">0.78</td>
@@ -180,27 +166,27 @@ MathorCup 数学建模竞赛 <br>
 <div id="comp-2022-apmcm" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
-APMCM 亚太大学生数学建模竞赛 <br>
+APMCM 亚太大学生数学建模竞赛 — 二等奖 <br>
+Global Temperature Prediction and Analysis
 </div>
 
-在本项目中，我们构建了多种时间序列与回归模型，分析全球气温变化趋势，并预测未来关键时间节点的温度变化。
+本论文针对全球变暖问题构建了三种时间序列预测模型，并使用虚拟变量回归分析气温与自然及社会因素的关系。数据选取 1990–2020 年全球面板数据。
 
-- **多元线性回归**：引入 GDP、人口、化石能源、森林覆盖率四因子
-- **XGBOOST**：非线性集成树模型，通过正则化控制过拟合
-- **ARIMA**：时间序列分析，捕捉长期趋势与周期性波动
-- **虚拟变量回归**：量化工业革命、气候带、自然灾害的影响
+- **多元线性回归 (MLR)**：引入化石能源消费量、全球 GDP、总人口、森林覆盖面积四个自变量
+- **XGBOOST**：非线性集成树模型，通过正则化参数（lambda, alpha）控制过拟合
+- **ARIMA**：基于 BIC 矩阵和 ACF/PACF 图确定参数 (p, q)，捕捉长期趋势与周期性
+- **虚拟变量回归**：量化工业革命、气候带、经济发展水平以及自然灾害的影响
 
-* 关键公式-自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
+* 自然灾害响应分析（引入火山爆发次数、森林火灾次数、肺炎疫情虚拟变量）
 
 $$
 Tem_{t}^{g} = \xi_{0} + \xi_{1} \cdot VolcanicEruption_{t} + \xi_{2} \cdot ForestFire_{t} + \xi_{3} \cdot Pneumonia_{t} + \epsilon_t
 $$
 
-* 模型评估与预测
-* 采用 MSE 和 MAPE 作为模型评价指标，比较三种模型在历史数据拟合与未来预测中的表现：
+* 模型评估与未来预测
 
-  <table style="width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff;">
-    <tr style="background: #f5f5f5;">
+  <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <tr>
       <th style="border: 1px solid #ddd; padding: 12px;">模型</th>
       <th style="border: 1px solid #ddd; padding: 12px;">MSE</th>
       <th style="border: 1px solid #ddd; padding: 12px;">MAPE</th>
@@ -215,11 +201,11 @@ $$
       <td style="border: 1px solid #ddd; padding: 10px;">25.56°C</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">XGBOOST</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">$3.305 \times 10^{-4}$</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">$1.081 \times 10^{-3}$</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">20.63°C</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">20.69°C</td>
+      <td style="border: 1px solid #ddd; padding: 10px;"><strong>XGBOOST</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px;"><strong>$3.305 \times 10^{-4}$</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px;"><strong>$1.081 \times 10^{-3}$</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px;"><strong>20.63°C</strong></td>
+      <td style="border: 1px solid #ddd; padding: 10px;"><strong>20.69°C</strong></td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">ARIMA</td>
@@ -230,35 +216,37 @@ $$
     </tr>
   </table>
 
+XGBOOST 在三个模型中表现最优（MSE 和 MAPE 最低），预测 2050 年全球气温达到 20.63°C，突破 20°C 阈值。MLR 因扰动项存在自相关性、拟合不足而未被采纳；ARIMA 虽时间序列描述能力强，但在此数据集上过于保守。分析进一步发现化石能源消费、GDP、人口与气温显著正相关，森林覆盖与之负相关；全球温度年均值呈持续上升趋势，且季均温度具有季节性波动特征。
+
 <div id="comp-2022-inn" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2022 <br>
-大学生创新创业训练计划——省级项目 <br>
-《投资者情绪与股利分配政策关系研究——基于NLP 理论的机器学习方法》
+大学生创新创业训练计划 — 省级立项 <br>
+《投资者情绪与股利分配政策关系研究——基于 NLP 理论的机器学习方法》
 </div>
 
 * 研究上市公司投资者情绪与股利分配政策的相关性，并通过调研问卷法补充考察非上市公司决策者对投资者情绪的反应。
-* 负责借助Python 的文本分析能力构造投资者情绪指数，最终构建多元回归模型。
+* 负责借助 Python 的文本分析能力构造投资者情绪指数，最终构建多元回归模型。
 
   <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-    <tr style="background: #f5f5f5;">
+    <tr>
       <th style="border: 1px solid #ddd; padding: 12px;">公式名称</th>
       <th style="border: 1px solid #ddd; padding: 12px;">表达式</th>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">Lintner股利模型</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">Lintner 股利模型</td>
       <td style="border: 1px solid #ddd; padding: 10px;">$m = DIV_1 - DIV_0 = s \cdot (r \cdot EPS_1 - DIV_0)$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">主题权重计算</td>
-      <td style="border: 1px solid #ddd; padding: 10px;">$W_i = \frac{L_i \text{的主题包含的评论数量}}{\text{评论总数量}}$</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">$W_i = \frac{L_i \text{ 的主题包含的评论数量}}{\text{评论总数量}}$</td>
     </tr>
     <tr>
       <td style="border: 1px solid #ddd; padding: 10px;">看涨指标</td>
       <td style="border: 1px solid #ddd; padding: 10px;">$B_{ts} = \frac{\sum W_i L_i^{pos} - \sum W_i L_i^{neg}}{\sum W_i L_i^{pos} + \sum W_i L_i^{neg}}$</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">投资者情绪指数(TSI)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">投资者情绪指数 (TSI)</td>
       <td style="border: 1px solid #ddd; padding: 10px;">$TSI = B_{ts} \cdot \ln(1 + M^{pos} + M^{neg} + M^{neu})$</td>
     </tr>
     <tr>
@@ -266,7 +254,7 @@ $$
       <td style="border: 1px solid #ddd; padding: 10px;">$r = a_0 + a_1 InSent + a_2 Size + a_3 Lev + a_4 ROE + a_5 Growth + a_6 BM + a_7 SOE + a_8 Top + a_9 Balance + \epsilon$</td>
     </tr>
     <tr>
-      <td style="border: 1px solid #ddd; padding: 10px;">指数移动平均(EMA)</td>
+      <td style="border: 1px solid #ddd; padding: 10px;">指数移动平均 (EMA)</td>
       <td style="border: 1px solid #ddd; padding: 10px;">$EMA_N(x_n) = \frac{2}{N+1} \sum_{k=0}^{\infty} \left(\frac{N-1}{N+1}\right)^k x_{n-k}$</td>
     </tr>
   </table>
