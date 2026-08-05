@@ -1,7 +1,6 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Collapse responsive navbar when toggler is visible
@@ -17,6 +16,24 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Theme toggle
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+        }
+        themeBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            themeBtn.innerHTML = next === 'dark'
+                ? '<i class="bi bi-sun-fill"></i>'
+                : '<i class="bi bi-moon-fill"></i>';
+        });
+    }
 
     // Yaml
     fetch(content_dir + config_file)
@@ -33,7 +50,6 @@ window.addEventListener('DOMContentLoaded', event => {
             })
         })
         .catch(error => console.log(error));
-
 
     // Marked
     marked.use({ mangle: false, headerIds: false })
