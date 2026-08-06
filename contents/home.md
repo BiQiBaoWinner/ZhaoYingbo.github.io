@@ -2,6 +2,7 @@
 
 本科就读于西南财经大学投资学专业，具备扎实的实体投资和金融投资基础。硕士就读于厦门大学金融专业，研究方向聚焦**量化投资与机器学习的交叉应用**。
 
+**技术能力**：熟练掌握 Python，熟悉 PyTorch 深度学习框架，具备从因子挖掘、回测验证到模型优化的全流程实践经验。具备部署 LLM 和调试优化机器学习模型的丰富经验，善于将大语言模型、强化学习等前沿技术应用于因子构建与策略生成。
 
 **实习经历**：在多家市场化金融机构<a href="experience.html">实习期间</a>，独立开发并上线多个具备增量信息的 Alpha 因子，熟悉微观结构理论与多因子模型构建。
 
@@ -10,10 +11,17 @@
 ---
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
-  <i class="bi bi-envelope-fill"></i>&ensp;Email
+  <i class="bi bi-lightbulb-fill"></i>&ensp;研究方向
 </div>
 
-<a href="mailto:zhaoyb0715@163.com"><i class="bi bi-envelope"></i> zhaoyb0715@163.com</a> &ensp;|&ensp; <a href="mailto:15620241152783@stu.xmu.edu.cn"><i class="bi bi-envelope"></i> 15620241152783@stu.xmu.edu.cn</a>
+<div class="home-tags">
+  <span class="home-tag">量化投资</span>
+  <span class="home-tag">因子挖掘</span>
+  <span class="home-tag">微观结构</span>
+  <span class="home-tag">强化学习</span>
+  <span class="home-tag">大语言模型</span>
+  <span class="home-tag">多目标优化</span>
+</div>
 
 ---
 
@@ -34,17 +42,9 @@
 ---
 
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
-  <i class="bi bi-lightbulb-fill"></i>&ensp;研究方向
+  <i class="bi bi-envelope-fill"></i>&ensp;Email
 </div>
 
-<div class="home-tags">
-  <span class="home-tag">量化投资</span>
-  <span class="home-tag">因子挖掘</span>
-  <span class="home-tag">微观结构</span>
-  <span class="home-tag">强化学习</span>
-  <span class="home-tag">大语言模型</span>
-  <span class="home-tag">多目标优化</span>
-</div>
-</div>
+<a href="mailto:zhaoyb0715@163.com"><i class="bi bi-envelope"></i> zhaoyb0715@163.com</a> &ensp;|&ensp; <a href="mailto:15620241152783@stu.xmu.edu.cn"><i class="bi bi-envelope"></i> 15620241152783@stu.xmu.edu.cn</a>
 
 ---
