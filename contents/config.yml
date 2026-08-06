@@ -1,8 +1,8 @@
-title: Yingbo Zhao's Homepage
+title: Personal Homepage
 page-top-title: 个人主页
 top-section-bg-text: Be finite  Be infinite.
-home-subtitle: 个人简介&ensp;|&ensp;赵英博
-copyright-text: '&copy; Yingbo Zhao 2020-2026. All Rights Reserved.'
+home-subtitle: 个人简介
+copyright-text: '&copy; 2020-2026. All Rights Reserved.'
 
 params:
   customCSS:
