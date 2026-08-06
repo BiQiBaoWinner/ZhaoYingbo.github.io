@@ -3,6 +3,20 @@ const config_file = 'config.yml'
 
 window.addEventListener('DOMContentLoaded', event => {
 
+    // Access check
+    const PASSKEY = 'zyb_swufe_xmu';
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('key') === PASSKEY) {
+        sessionStorage.setItem('_access', '1');
+        const url = new URL(window.location);
+        url.searchParams.delete('key');
+        window.history.replaceState({}, '', url);
+    }
+    if (sessionStorage.getItem('_access') !== '1') {
+        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;text-align:center;font-family:sans-serif;color:#999;"><div><div style="font-size:4rem;margin-bottom:1rem;">🔒</div><p style="font-size:1.1rem;">This page is not publicly accessible.</p></div></div>';
+        return;
+    }
+
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
