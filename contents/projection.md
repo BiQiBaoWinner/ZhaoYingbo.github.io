@@ -87,24 +87,35 @@ AlphaPareto 在广泛参数尺度下均表现强劲，但性能呈 **非单调�
 
 **方法论**：将截面排名回归（Cross-Sectional Rank Regression）与 LightGBM 集成学习相结合，输入 47 维多周期 alpha 因子（时序动量/波动率/持仓/隔夜跳空/偏度/布林带），预测 5 日后收益率截面排名，选取 Top-5 品种等波动率做多。
 
-**关键成果**（2021.01–2022.06 纯样本外）：
+**关键成果**（纯样本外 2021.01–2022.06，H=5 天调仓，双边 3bp 手续费，T+1 开盘入场）：
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0;">
-  <div style="background:linear-gradient(135deg,#1976d2,#42a5f5);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
-    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">夏普比率</div>
-    <div style="font-size:1.6rem;font-weight:700;">1.32</div>
+<div class="competition-tables">
+  <div class="competition-table">
+    <div class="competition-table-title">LGBM 策略</div>
+    <table>
+      <tr><th>指标</th><th>数值</th></tr>
+      <tr><td>夏普比率</td><td><strong>1.33</strong></td></tr>
+      <tr><td>年化收益率</td><td>10.9%</td></tr>
+      <tr><td>年化波动率</td><td>8.0%</td></tr>
+      <tr><td>最大回撤</td><td>-9.3%</td></tr>
+      <tr><td>卡玛比率</td><td>1.17</td></tr>
+      <tr><td>IC 均值</td><td>0.048</td></tr>
+      <tr><td>ICIR</td><td>0.23</td></tr>
+      <tr><td>年化换手率</td><td>6.1x</td></tr>
+      <tr><td>总交易费/本金</td><td>2.0%</td></tr>
+    </table>
   </div>
-  <div style="background:linear-gradient(135deg,#2e7d32,#66bb6a);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
-    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">年化收益</div>
-    <div style="font-size:1.6rem;font-weight:700;">10.9%</div>
-  </div>
-  <div style="background:linear-gradient(135deg,#e65100,#ff9800);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
-    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">最大回撤</div>
-    <div style="font-size:1.6rem;font-weight:700;">-8.6%</div>
-  </div>
-  <div style="background:linear-gradient(135deg,#6a1b9a,#ab47bc);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
-    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">卡玛比率</div>
-    <div style="font-size:1.6rem;font-weight:700;">1.27</div>
+  <div class="competition-table">
+    <div class="competition-table-title">等权做多基准</div>
+    <table>
+      <tr><th>指标</th><th>数值</th></tr>
+      <tr><td>夏普比率</td><td>1.63</td></tr>
+      <tr><td>年化收益率</td><td><strong>39.1%</strong></td></tr>
+      <tr><td>年化波动率</td><td>21.8%</td></tr>
+      <tr><td>最大回撤</td><td>-16.8%</td></tr>
+      <tr><td>卡玛比率</td><td>2.33</td></tr>
+      <tr><td colspan="2" style="color:#888;font-size:0.85rem;">— 被动持有所有品种等权</td></tr>
+    </table>
   </div>
 </div>
 
@@ -131,9 +142,26 @@ AlphaPareto 在广泛参数尺度下均表现强劲，但性能呈 **非单调�
   <img src="static/assets/img/cta_features.png" alt="特征重要性" style="width:70%; display:inline-block;">
 </div>
 
-> 在 H=5 天调仓周期下，策略在纯 OOS 期内夏普 1.32，年化波动率 8.1%，换手率 6.1 倍/年。参数敏感性分析显示策略在不同持仓集中度（TOP 3–12）和预测周期（1–20 天）下表现稳健；交易成本在 5bp 以内时夏普均超过 1.0。
+> **分析与讨论**：OOS 期恰逢俄乌冲突驱动的商品超级周期（原油 + 60%、农产品 + 40%），等权做多基准年化 39%、夏普 1.63。在此极端趋势行情下，LGBM 策略无法复制基准的绝对收益，但在风险控制上显著占优——年化波动率仅为基准的 37%（8.0% vs 21.8%）、最大回撤仅基准的 55%（-9.3% vs -16.8%）。参数敏感性分析显示策略在不同持仓集中度和预测周期下夏普表现稳健，交易成本在 5bp 以内时夏普均超过 1.0。特征重要性分析表明多周期动量、隔夜跳空和波动率指标为核心驱动器，验证了截面 alpha 因子的有效性。
+  <img src="static/assets/img/cta_drawdown.png" alt="CTA回撤" style="width:90%; display:inline-block;margin-bottom:8px;">
+</div>
 
-**完整指标**：IC 均值 0.048 | ICIR 0.23 | 总收益率 15.0% | 交易费用/本金 2.0% | 总交易 1,582 笔
+<div class="competition-tables">
+  <div class="competition-table">
+    <div class="competition-table-title">参数敏感性</div>
+    <img src="static/assets/img/cta_sensitivity_h_top.png" alt="参数敏感性" style="width:100%;">
+  </div>
+  <div class="competition-table">
+    <div class="competition-table-title">交易成本敏感性</div>
+    <img src="static/assets/img/cta_sensitivity_cost.png" alt="成本敏感性" style="width:100%;">
+  </div>
+</div>
+
+<div style="text-align:center;margin:12px 0;">
+  <img src="static/assets/img/cta_features.png" alt="特征重要性" style="width:70%; display:inline-block;">
+</div>
+
+> **分析与讨论**：OOS 期恰逢俄乌冲突驱动的商品超级周期（原油 +60%、农产品 +40%），等权做多基准年化 39%、夏普 1.63。在此极端趋势行情下，LGBM 策略无法复制基准的绝对收益，但在风险控制上显著占优——年化波动率仅为基准的 37%（8.0% vs 21.8%）、最大回撤仅基准的 55%（-9.3% vs -16.8%）。参数敏感性分析显示策略在不同持仓集中度和预测周期下夏普表现稳健，交易成本在 5bp 以内时夏普均超过 1.0。特征重要性分析表明多周期动量、隔夜跳空和波动率指标为核心驱动器，验证了截面 alpha 因子的有效性。
 
 ---
 
