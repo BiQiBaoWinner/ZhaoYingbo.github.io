@@ -1,5 +1,6 @@
 <div class="competition-nav">
     <a href="#proj-2025-llm-rl"><span class="nav-year">2025</span><span class="nav-title">AlphaPareto：大模型+多目标强化学习因子挖掘</span></a>
+    <a href="#proj-2025-cta"><span class="nav-year">2025</span><span class="nav-title">商品期货 CTA 趋势跟踪策略</span></a>
     <a href="#proj-2023-chengdu"><span class="nav-year">2023</span><span class="nav-title">成都市投资分析报告（2022）</span></a>
 </div>
 
@@ -73,6 +74,66 @@ AlphaPareto 在广泛参数尺度下均表现强劲，但性能呈 **非单调�
 </div>
 
 > AlphaPareto 在年化收益率、信息比率和夏普比率上均排名第一，验证了多目标因子挖掘在实际投资组合构建中的经济价值。
+
+---
+
+<div id="proj-2025-cta" class="competition-anchor"></div>
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
+2025年7月 <br>
+商品期货 CTA 趋势跟踪策略（燧石资产入职项目）
+</div>
+
+基于 38 个商品期货日线数据（覆盖化工、黑色、农产品、有色、贵金属五大板块），构建跨截面排名驱动的 CTA 趋势跟踪策略。
+
+**方法论**：将截面排名回归（Cross-Sectional Rank Regression）与 LightGBM 集成学习相结合，输入 47 维多周期 alpha 因子（时序动量/波动率/持仓/隔夜跳空/偏度/布林带），预测 5 日后收益率截面排名，选取 Top-5 品种等波动率做多。
+
+**关键成果**（2021.01–2022.06 纯样本外）：
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:18px 0;">
+  <div style="background:linear-gradient(135deg,#1976d2,#42a5f5);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
+    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">夏普比率</div>
+    <div style="font-size:1.6rem;font-weight:700;">1.32</div>
+  </div>
+  <div style="background:linear-gradient(135deg,#2e7d32,#66bb6a);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
+    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">年化收益</div>
+    <div style="font-size:1.6rem;font-weight:700;">10.9%</div>
+  </div>
+  <div style="background:linear-gradient(135deg,#e65100,#ff9800);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
+    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">最大回撤</div>
+    <div style="font-size:1.6rem;font-weight:700;">-8.6%</div>
+  </div>
+  <div style="background:linear-gradient(135deg,#6a1b9a,#ab47bc);color:#fff;padding:14px 10px;border-radius:8px;text-align:center;">
+    <div style="font-size:0.75rem;opacity:0.9;margin-bottom:4px;">卡玛比率</div>
+    <div style="font-size:1.6rem;font-weight:700;">1.27</div>
+  </div>
+</div>
+
+<div style="text-align:center;">
+  <img src="static/assets/img/cta_equity.png" alt="CTA净值曲线" style="width:90%; display:inline-block;margin-bottom:8px;">
+</div>
+
+<div style="text-align:center;">
+  <img src="static/assets/img/cta_drawdown.png" alt="CTA回撤" style="width:90%; display:inline-block;margin-bottom:8px;">
+</div>
+
+<div class="competition-tables">
+  <div class="competition-table">
+    <div class="competition-table-title">参数敏感性</div>
+    <img src="static/assets/img/cta_sensitivity_h_top.png" alt="参数敏感性" style="width:100%;">
+  </div>
+  <div class="competition-table">
+    <div class="competition-table-title">交易成本敏感性</div>
+    <img src="static/assets/img/cta_sensitivity_cost.png" alt="成本敏感性" style="width:100%;">
+  </div>
+</div>
+
+<div style="text-align:center;margin:12px 0;">
+  <img src="static/assets/img/cta_features.png" alt="特征重要性" style="width:70%; display:inline-block;">
+</div>
+
+> 在 H=5 天调仓周期下，策略在纯 OOS 期内夏普 1.32，年化波动率 8.1%，换手率 6.1 倍/年。参数敏感性分析显示策略在不同持仓集中度（TOP 3–12）和预测周期（1–20 天）下表现稳健；交易成本在 5bp 以内时夏普均超过 1.0。
+
+**完整指标**：IC 均值 0.048 | ICIR 0.23 | 总收益率 15.0% | 交易费用/本金 2.0% | 总交易 1,582 笔
 
 ---
 
