@@ -113,6 +113,10 @@ AlphaPareto 在广泛参数尺度下均表现强劲，但性能呈 **非单调�
 </div>
 
 <div style="text-align:center;margin:12px 0;">
+  <img src="static/assets/img/cta_multi_cumret.png" alt="多品种累计收益" style="width:95%; display:inline-block;">
+</div>
+
+<div style="text-align:center;margin:12px 0;">
   <img src="static/assets/img/generalization_boxplot.png" alt="泛化箱线图" style="width:70%; display:inline-block;">
 </div>
 
