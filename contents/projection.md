@@ -1,6 +1,6 @@
 <div class="competition-nav">
     <a href="#proj-2025-llm-rl"><span class="nav-year">2025</span><span class="nav-title">AlphaPareto：大模型+多目标强化学习因子挖掘</span></a>
-    <a href="#proj-2025-cta"><span class="nav-year">2025</span><span class="nav-title">商品期货 CTA 趋势跟踪策略</span></a>
+    <a href="#proj-2025-cta"><span class="nav-year">2025</span><span class="nav-title">商品期货时序择时 — 多方法对比与验证</span></a>
     <a href="#proj-2023-chengdu"><span class="nav-year">2023</span><span class="nav-title">成都市投资分析报告（2022）</span></a>
 </div>
 
@@ -80,88 +80,45 @@ AlphaPareto 在广泛参数尺度下均表现强劲，但性能呈 **非单调�
 <div id="proj-2025-cta" class="competition-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 2025年7月 <br>
-商品期货 CTA 趋势跟踪策略（燧石资产入职项目）
+商品期货时序择时 — 多方法对比与系统性验证（燧石资产入职项目）
 </div>
 
-基于 38 个商品期货日线数据（覆盖化工、黑色、农产品、有色、贵金属五大板块），构建跨截面排名驱动的 CTA 趋势跟踪策略。
+基于 38 个商品期货日线数据，系统性地探索 ML 在单品种时序择时中的有效性边界。项目并非追求单条亮丽回测曲线，而是通过**多方法对比、多验证维度、跨品种泛化**完整呈现量化研究流程。
 
-**方法论**：将截面排名回归（Cross-Sectional Rank Regression）与 LightGBM 集成学习相结合，输入 47 维多周期 alpha 因子（时序动量/波动率/持仓/隔夜跳空/偏度/布林带），预测 5 日后收益率截面排名，选取 Top-5 品种等波动率做多。
+**研究方法演进**：从截面排名回归 → 单品种择时分类 → 池化面板回归，迭代三种建模范式。每种方法均使用 **滑动窗口 Walk-Forward 验证**（2年训练 / 6月验证 / 1年测试 / 半年步长），输入 55 维特征（43 时序 + 9 截面排序 + 3 板块虚拟变量）。
 
-**关键成果**（纯样本外 2021.01–2022.06，H=5 天调仓，双边 3bp 手续费，T+1 开盘入场）：
+**关键发现**：
 
 <div class="competition-tables">
   <div class="competition-table">
-    <div class="competition-table-title">LGBM 策略</div>
+    <div class="competition-table-title">市场环境适应性</div>
     <table>
-      <tr><th>指标</th><th>数值</th></tr>
-      <tr><td>夏普比率</td><td><strong>1.33</strong></td></tr>
-      <tr><td>年化收益率</td><td>10.9%</td></tr>
-      <tr><td>年化波动率</td><td>8.0%</td></tr>
-      <tr><td>最大回撤</td><td>-9.3%</td></tr>
-      <tr><td>卡玛比率</td><td>1.17</td></tr>
-      <tr><td>IC 均值</td><td>0.048</td></tr>
-      <tr><td>ICIR</td><td>0.23</td></tr>
-      <tr><td>年化换手率</td><td>6.1x</td></tr>
-      <tr><td>总交易费/本金</td><td>2.0%</td></tr>
+      <tr><th>市场环境</th><th>时期</th><th>策略表现</th></tr>
+      <tr><td>商品超级周期</td><td>2020H2–2022H1</td><td>✓ 有效 (MeanSR 0.55–0.82)</td></tr>
+      <tr><td>温和趋势</td><td>2019, 2020</td><td>△ 弱有效 (MeanSR 0.24–0.27)</td></tr>
+      <tr><td>震荡/下跌</td><td>2018, 2019H2</td><td>− 失效 (MeanSR −0.10–−0.46)</td></tr>
     </table>
   </div>
   <div class="competition-table">
-    <div class="competition-table-title">等权做多基准</div>
+    <div class="competition-table-title">跨品种泛化 (RB模型 → 36品种)</div>
     <table>
-      <tr><th>指标</th><th>数值</th></tr>
-      <tr><td>夏普比率</td><td>1.63</td></tr>
-      <tr><td>年化收益率</td><td><strong>39.1%</strong></td></tr>
-      <tr><td>年化波动率</td><td>21.8%</td></tr>
-      <tr><td>最大回撤</td><td>-16.8%</td></tr>
-      <tr><td>卡玛比率</td><td>2.33</td></tr>
-      <tr><td colspan="2" style="color:#888;font-size:0.85rem;">— 被动持有所有品种等权</td></tr>
+      <tr><th>板块</th><th>品种数</th><th>平均 SR</th></tr>
+      <tr><td>有色金属</td><td>4</td><td>1.18</td></tr>
+      <tr><td>农产品</td><td>10</td><td>0.85</td></tr>
+      <tr><td>黑色</td><td>7</td><td>0.71</td></tr>
+      <tr><td>化工</td><td>10</td><td>0.52</td></tr>
+      <tr><td>贵金属</td><td>2</td><td>−0.24</td></tr>
     </table>
   </div>
 </div>
 
-<div style="text-align:center;">
-  <img src="static/assets/img/cta_equity.png" alt="CTA净值曲线" style="width:90%; display:inline-block;margin-bottom:8px;">
-</div>
-
-<div style="text-align:center;">
-  <img src="static/assets/img/cta_drawdown.png" alt="CTA回撤" style="width:90%; display:inline-block;margin-bottom:8px;">
-</div>
-
-<div class="competition-tables">
-  <div class="competition-table">
-    <div class="competition-table-title">参数敏感性</div>
-    <img src="static/assets/img/cta_sensitivity_h_top.png" alt="参数敏感性" style="width:100%;">
-  </div>
-  <div class="competition-table">
-    <div class="competition-table-title">交易成本敏感性</div>
-    <img src="static/assets/img/cta_sensitivity_cost.png" alt="成本敏感性" style="width:100%;">
-  </div>
-</div>
-
 <div style="text-align:center;margin:12px 0;">
-  <img src="static/assets/img/cta_features.png" alt="特征重要性" style="width:70%; display:inline-block;">
+  <img src="static/assets/img/generalization_boxplot.png" alt="泛化箱线图" style="width:70%; display:inline-block;">
 </div>
 
-> **分析与讨论**：OOS 期恰逢俄乌冲突驱动的商品超级周期（原油 + 60%、农产品 + 40%），等权做多基准年化 39%、夏普 1.63。在此极端趋势行情下，LGBM 策略无法复制基准的绝对收益，但在风险控制上显著占优——年化波动率仅为基准的 37%（8.0% vs 21.8%）、最大回撤仅基准的 55%（-9.3% vs -16.8%）。参数敏感性分析显示策略在不同持仓集中度和预测周期下夏普表现稳健，交易成本在 5bp 以内时夏普均超过 1.0。特征重要性分析表明多周期动量、隔夜跳空和波动率指标为核心驱动器，验证了截面 alpha 因子的有效性。
-  <img src="static/assets/img/cta_drawdown.png" alt="CTA回撤" style="width:90%; display:inline-block;margin-bottom:8px;">
-</div>
+> **核心能力体现**：(1) 识别到 ML 择时信号的**市场环境依赖性**——在趋势行情中有效、震荡市中失效，这对生产环境中信号加权和仓位控制有直接指导意义。(2) 单品种模型可零修改泛化至 83% 的品种（正夏普），说明学到了**跨品种通用的定价模式**。(3) 滑动窗口验证揭示了峰值夏普（单窗口 1.33）与全样本均值（0.21）之间的显著差异——这是单次切分最容易掩盖的过拟合陷阱。(4) 长周期波动率（hv_60d）、收益率偏度（skew_60）和价格极端位（hh_120/ll_120）为泛化能力最强的因子类别。
 
-<div class="competition-tables">
-  <div class="competition-table">
-    <div class="competition-table-title">参数敏感性</div>
-    <img src="static/assets/img/cta_sensitivity_h_top.png" alt="参数敏感性" style="width:100%;">
-  </div>
-  <div class="competition-table">
-    <div class="competition-table-title">交易成本敏感性</div>
-    <img src="static/assets/img/cta_sensitivity_cost.png" alt="成本敏感性" style="width:100%;">
-  </div>
-</div>
-
-<div style="text-align:center;margin:12px 0;">
-  <img src="static/assets/img/cta_features.png" alt="特征重要性" style="width:70%; display:inline-block;">
-</div>
-
-> **分析与讨论**：OOS 期恰逢俄乌冲突驱动的商品超级周期（原油 +60%、农产品 +40%），等权做多基准年化 39%、夏普 1.63。在此极端趋势行情下，LGBM 策略无法复制基准的绝对收益，但在风险控制上显著占优——年化波动率仅为基准的 37%（8.0% vs 21.8%）、最大回撤仅基准的 55%（-9.3% vs -16.8%）。参数敏感性分析显示策略在不同持仓集中度和预测周期下夏普表现稳健，交易成本在 5bp 以内时夏普均超过 1.0。特征重要性分析表明多周期动量、隔夜跳空和波动率指标为核心驱动器，验证了截面 alpha 因子的有效性。
+**验证维度**：9 个滑动窗口 × 36 品种 = 324 次样本外回测 | MeanSR 0.21 | 正向品种占比 58% | 特征 55 维 | 双边 3bp 手续费
 
 ---
 
