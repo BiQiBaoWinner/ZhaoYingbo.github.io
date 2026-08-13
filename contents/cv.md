@@ -37,7 +37,7 @@ Quantitative Investment, Factor Mining, Reinforcement Learning, Large Language M
 
 - Designed and iterated alpha factors based on order book microstructure, capturing asymmetric pressure in active trading and limit order placement
 - Factor achieved 2.33% annualized return with Sharpe 2.41 on ChiNext sample (2024.07–2025.07), with correlation < 0.7 to existing factor library
-- Optimized ETF portfolio allocation through market-cap-weighted position reduction, improving annualized return from 3.08% to 4.63%
+- Led research on ETF subscription/redemption basket (PCF) rebalancing rules — the firm allocates physical constituent stock baskets monthly/weekly per ETF PCF and sells covered calls to hedge market Beta, making returns mainly from intraday T0 Alpha. Designed "market-cap-descending" reduction rule, raising T0 annualized return from 3.08% to 4.63% within tracking-error constraint, and stress-tested order sizing (4× scale-up) for robustness
 
 **Soochow Securities Co., Ltd. — Research Intern, Food & Beverage (2023.11 – 2024.03)**
 
@@ -53,9 +53,10 @@ Quantitative Investment, Factor Mining, Reinforcement Learning, Large Language M
 - Designed 65 features (spread, depth, order book distribution, imbalance), achieving IC up to 9.95%
 - Out-of-sample cumulative returns: 42.26% (5-tick) to 23.51% (60-tick)
 
-**ETF Portfolio Optimization (Flintstone Asset)**
-- Designed market-cap-weighted position reduction logic for ETF portfolios
-- Achieved +0.88% to +2.35% product-level return improvement across threshold tiers (n=2 to n=11)
+**ETF Subscription/Redemption Basket Rebalancing (Flintstone Asset)**
+- Led research on ETF PCF basket rebalancing rules; firm allocates physical baskets per ETF PCF and sells covered calls to hedge Beta, returns driven by intraday T0 Alpha
+- Designed "market-cap-descending" reduction rule (prioritize large-cap, step down), raising T0 annualized return from 3.08% to 4.63% within tracking-error constraint
+- Stress-tested order sizing (4× scale-up) and extreme scenarios to verify robustness and strategy capacity at high trading volume
 
 ---
 
