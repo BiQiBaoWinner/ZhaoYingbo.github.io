@@ -9,6 +9,7 @@
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
 平安理财  |  科技运营部 AI 算法应用团队  -  AI 算法实习生  |  2026.6 – 2026.8
 </div>
+
 针对 EVA Agent 渐进披露机制下"skill 规模增长 → LLM 选择准确率下滑"的问题，独立完成 skill 选择优化的完整闭环：**数据构建 → 模型微调 → 效果评估 → 工程方案设计**。
 
 #### 工作内容：
