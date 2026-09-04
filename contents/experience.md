@@ -1,8 +1,41 @@
 <div class="experience-nav">
+  <a href="#exp-pa"><span class="nav-title">平安理财 · AI算法</span><span class="nav-year">2026.6 – 2026.8</span></a>
   <a href="#exp-jfz"><span class="nav-title">金斧子基金</span><span class="nav-year">2026.1 – 2026.3</span></a>
   <a href="#exp-suishi"><span class="nav-title">燧石资产</span><span class="nav-year">2025.7 – 2025.9</span></a>
   <a href="#exp-dwzq"><span class="nav-title">东吴证券</span><span class="nav-year">2023.11 – 2024.3</span></a>
 </div>
+
+<div id="exp-pa" class="experience-anchor"></div>
+<div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
+平安理财  |  科技运营部 AI 算法应用团队  -  AI 算法实习生  |  2026.6 – 2026.8
+</div>
+针对 EVA Agent 渐进披露机制下"skill 规模增长 → LLM 选择准确率下滑"的问题，独立完成 skill 选择优化的完整闭环：**数据构建 → 模型微调 → 效果评估 → 工程方案设计**。
+
+#### 工作内容：
+
+- **SkillRouter 检索路由验证与微调**：合并约 7.8 万条 skill（企业 skill + 外部社区 pool），以 query : 正例 : 负例 = 1 : 1 : 10 构造样本，经 HardNegativeMining 与 FalseNegativeFiltering 清洗，产出 **10,140 条**训练数据；基于 **Qwen3-Embedding-0.6B（Bi-Encoder 粗排）+ Qwen3-Reranker-0.6B（Cross-Encoder 重排）** 完成 LoRA 微调，单卡 A800 约 50h。检索 **Hit@1** 在 skill 规模 39 / 78 / 117 下由 57.9% / 35.9% / 31.9% 提升至 **98.7% / 95.6% / 86.3%**，**Hit@40** 由 100% / 97.1% / 83.0% 提升至 **100% / 100% / 91.3%**；Embedding 粗排 100 → Reranker 重排 100 → 取 Top40 喂 LLM 的收敛口径，经隔离生成评估 query 验证。
+
+- **分批并行化工程方案**：全量注入在 skill 超 450 条时触发 1000K 上下文窗口溢出。提出**分批并行化**——将 skill 元数据按 40 条/批切片，各片并行让 LLM 做局部选择，再从候选集收敛定序出最终 skill，单次上下文可控且不训练模型。大规模场景准确率超越全量注入约 **5–6pp**（429 规模 80.51% vs 74.62%），单条 query 响应时间由 5.56s（全量注入，随规模线性增长）降至**恒定约 1.04s**。通过"skill 配比 × 分片数 N=2/3"全矩阵实验定位最优批次量。
+
+<div style="margin:1.2rem 0 0.6rem;">
+  <div style="font-weight:700;font-size:1rem;padding:8px 14px;background:linear-gradient(135deg,#1976d2,#42a5f5);color:#fff;border-radius:6px 6px 0 0;text-align:center;">skill 选择准确率对比（query 来源：仅公司 skill，端到端经 LLM 选择）</div>
+  <table>
+    <thead>
+      <tr><th>Skill 规模</th><th>EVA 全量注入</th><th>分批并行化 N=2</th><th>提升</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>39</td><td>88.21%</td><td>86.41%</td><td>—</td></tr>
+      <tr><td>117</td><td>84.10%</td><td><strong>86.41%</strong></td><td><strong>+2.3pp</strong></td></tr>
+      <tr><td>234</td><td>80.26%</td><td><strong>84.10%</strong></td><td><strong>+3.8pp</strong></td></tr>
+      <tr><td>429</td><td>74.62%</td><td><strong>80.51%</strong></td><td><strong>+5.9pp</strong></td></tr>
+      <tr><td>450</td><td>超出上下文窗口</td><td><strong>80.13%</strong></td><td>可正常选择</td></tr>
+    </tbody>
+  </table>
+</div>
+
+> 方案取舍：当 skill < 450 时，RAG 方案（训练模型）准确率低于 EVA 现状且需反复微调，ROI 低；> 450 时 RAG 依赖更高检索召回质量、维护成本高。而 EVA 业务场景 skill 预期短期不会爆发式增长，故采用**不训练模型 + 单次注入量小 + 落地风险低**的工程化方案解决。
+
+---
 
 <div id="exp-jfz" class="experience-anchor"></div>
 <div style="margin:1.2rem 0 0.6rem;padding:0.35rem 0.75rem;border-left:4px solid #3948d2;background:linear-gradient(90deg,rgba(57,72,210,0.10),rgba(57,72,210,0));font-weight:700;font-size:1.30rem;border-radius:0 8px 8px 0;">
